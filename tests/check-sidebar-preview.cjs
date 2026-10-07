@@ -52,7 +52,8 @@ const measure = () => evaluate(`(() => {
         chatVisible:[...document.querySelectorAll('.claudian-container')].some(e => e.getBoundingClientRect().width > 0),
         panelHeaders:[...document.querySelectorAll('.mod-sidedock .workspace-leaf-content .nav-header:first-child')]
             .filter(e => e.getBoundingClientRect().width > 0 && e.querySelector('.nav-action-button'))
-            .map(e => { const r = e.getBoundingClientRect(); return {type:e.closest('.workspace-leaf-content').dataset.type,
+            .map(e => { const r = e.getBoundingClientRect(), row = getComputedStyle(e.querySelector('.nav-buttons-container')); return {type:e.closest('.workspace-leaf-content').dataset.type,
+                background:row.backgroundColor, gap:row.gap,
                 x:r.x, y:r.y, width:r.width, height:r.height, buttons:controls('.nav-action-button', e),
                 groups:[...e.querySelectorAll('.nav-buttons-container :not(.nav-action-button):has(> .nav-action-button)')].map(g => {
                     const s = getComputedStyle(g);
@@ -83,7 +84,10 @@ try {
         assert(expanded.height > panel.height, `Panel does not expand: ${panel.type}`);
         assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
             `Panel controls squeezed or covered: ${panel.type}`);
-        assert(expanded.groups.every(g => g.radius >= g.height / 2), `Expanded group still has square corners: ${panel.type}`);
+        assert.equal(expanded.background, 'rgba(0, 0, 0, 0)', 'OnePage Linux toolbar should have a transparent surface');
+        assert.equal(expanded.gap, '2px', 'OnePage Linux toolbar spacing differs');
+        assert(expanded.buttons.every(c => c.icon?.width === 18), 'OnePage Linux icon size differs');
+        assert(expanded.groups.every(g => g.radius === 9), `Expanded group differs from OnePage Linux: ${panel.type}`);
     }
     hoverPanel('file-explorer');
     settlePanelActions();

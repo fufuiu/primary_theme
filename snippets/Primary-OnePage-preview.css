@@ -188,7 +188,8 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
         --panel-actions-duration: 320ms;
         --panel-actions-easing: cubic-bezier(0.32, 0.72, 0, 1);
-        --clickable-icon-radius: 100vh;
+        --clickable-icon-radius: 9px;
+        --anim-duration-fast: 160ms;
         --background-modifier-hover: color-mix(in oklch, rgb(var(--mono-rgb-100)) 6.7%, transparent);
         display: flex;
         flex-direction: column;
@@ -201,10 +202,10 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         max-width: 100%;
         flex-wrap: wrap;
         margin: 0;
-        gap: 0;
-        padding: 2px;
-        border-radius: var(--clickable-icon-radius);
-        background: var(--background-modifier-hover);
+        gap: 2px;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
         transition: gap var(--panel-actions-duration) var(--panel-actions-easing),
             padding var(--panel-actions-duration) var(--panel-actions-easing),
             background-color var(--anim-duration-fast);
@@ -212,10 +213,9 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button {
         position: relative;
-        --icon-size: 16px;
+        --icon-size: 18px;
         --icon-stroke: 2px;
-        min-width: 40px;
-        height: auto;
+        height: 100%;
         padding: 8px;
         border-radius: var(--clickable-icon-radius);
         transition: padding var(--panel-actions-duration) var(--panel-actions-easing),
