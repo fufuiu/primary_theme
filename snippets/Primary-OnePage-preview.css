@@ -199,8 +199,9 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
         width: fit-content;
-        max-width: 100%;
-        flex-wrap: wrap;
+        /* Use the header's side inset before compressing controls. */
+        max-width: calc(100% + 32px);
+        flex-wrap: nowrap;
         align-items: center;
         margin: 0;
         gap: 2px;
@@ -216,6 +217,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         position: relative;
         --icon-size: 18px;
         --icon-stroke: 2px;
+        min-width: 20px;
         height: auto;
         padding: 8px;
         border-radius: var(--clickable-icon-radius);
@@ -225,6 +227,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
     }
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container svg {
+        flex-shrink: 0;
         transition: width var(--panel-actions-duration) var(--panel-actions-easing),
             height var(--panel-actions-duration) var(--panel-actions-easing);
     }

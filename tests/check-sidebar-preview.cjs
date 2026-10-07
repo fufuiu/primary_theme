@@ -82,6 +82,8 @@ try {
         settlePanelActions();
         const expanded = measure().panelHeaders.find(p => p.type === panel.type);
         assert(expanded.height > panel.height, `Panel does not expand: ${panel.type}`);
+        const centers = expanded.buttons.map(c => c.y + c.height / 2);
+        assert(Math.max(...centers) - Math.min(...centers) <= 1, `Panel actions wrap onto another row: ${panel.type}`);
         assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
             `Panel controls squeezed or covered: ${panel.type}`);
         assert(expanded.buttons.every(c => c.height <= 36) && expanded.groups.every(g => g.height <= 36),
