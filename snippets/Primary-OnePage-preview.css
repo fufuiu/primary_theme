@@ -41,15 +41,16 @@ body.theme-light:not(.is-mobile) {
     --link-unresolved-color-hover: var(--text-accent);
     --link-ahref-color: var(--text-accent);
     --link-ahref-color-hover: var(--text-accent-hover);
-    --h1-color: var(--text-normal);
-    --h2-color: var(--text-normal);
-    --h3-color: var(--text-normal);
-    --h4-color: var(--text-normal);
-    --h5-color: var(--text-normal);
+    /* OnePage document roles; small headings are darkened for this paper tone. */
+    --h1-color: #1d345c;
+    --h2-color: #52377a;
+    --h3-color: #0e6e63;
+    --h4-color: #ac4557;
+    --h5-color: #93631c;
     --h6-color: var(--text-muted);
     --inline-title-color: var(--text-normal);
-    --bold-color: var(--text-normal);
-    --italic-color: var(--text-normal);
+    --bold-color: #c2410c;
+    --italic-color: #4a704f;
     --inline-code-color: var(--text-normal);
     --inline-code-bg: var(--background-primary-alt);
     --editor-bg-color: var(--background-primary);
@@ -99,6 +100,7 @@ body.theme-light:not(.is-mobile) {
     --graph-node-highlight-line: var(--text-accent);
     --graph-text: var(--text-muted);
     --graph-line: var(--background-modifier-border);
+    --table-header-color: var(--text-accent);
     --callout-color-opacity: 6%;
     --callout-container-shadow: none;
     --callout-title-shadow: none;
@@ -182,7 +184,15 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
 }
 
 body.theme-light:not(.is-mobile) .callout {
+    --callout-title-color: color-mix(in srgb, rgb(var(--callout-color)) 32%, var(--text-normal));
     border-inline-start: 2px solid rgba(var(--callout-color), 0.5);
+}
+
+body.theme-light:not(.is-mobile) .callout .callout-title,
+body.theme-light:not(.is-mobile) .callout .callout-icon,
+body.theme-light:not(.is-mobile) .callout .callout-fold {
+    color: var(--callout-title-color);
+    filter: none;
 }
 
 body.theme-light:not(.is-mobile) .nav-file-title:active {
