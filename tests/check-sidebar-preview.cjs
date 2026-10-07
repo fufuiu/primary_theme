@@ -10,6 +10,22 @@ const evaluate = code => {
 };
 const move = (x, y) => cli('dev:cdp', 'method=Input.dispatchMouseEvent',
     `params=${JSON.stringify({ type: 'mouseMoved', x, y, button: 'none' })}`);
+const cdp = (method, params) => JSON.parse(cli('dev:cdp', `method=${method}`, `params=${JSON.stringify(params)}`));
+const forcedHeaders = new Set();
+const hoverPanel = (type, active = true) => {
+    const rootNode = cdp('DOM.getDocument', {depth:0}).root.nodeId;
+    const nodeId = cdp('DOM.querySelector', {nodeId:rootNode, selector:`.mod-sidedock [data-type="${type}"] .nav-header:first-child`}).nodeId;
+    if (nodeId) cdp('CSS.forcePseudoState', {nodeId, forcedPseudoClasses:active ? ['hover'] : []});
+    if (active) forcedHeaders.add(type);
+};
+const settlePanelActions = () => evaluate(`(() => {
+    for (const header of document.querySelectorAll('.mod-sidedock .workspace-leaf-content .nav-header:first-child')) {
+        const svg = header.querySelector('svg');
+        if (svg) getComputedStyle(svg).width;
+        header.getAnimations({subtree:true}).forEach(animation => animation.finish());
+    }
+    return JSON.stringify(true);
+})()`);
 const measure = () => evaluate(`(() => {
     const rect = selector => {
         const e = document.querySelector(selector);
@@ -18,7 +34,7 @@ const measure = () => evaluate(`(() => {
         return { x:r.x, y:r.y, width:r.width, height:r.height, right:r.right, bottom:r.bottom, clickable:hit===e||e.contains(hit),
             borderWidth:s.borderTopWidth, shadow:s.boxShadow };
     };
-    const controls = selector => [...document.querySelectorAll(selector)].map((e, index) => {
+    const controls = (selector, root = document) => [...root.querySelectorAll(selector)].map((e, index) => {
         const r = e.getBoundingClientRect();
         const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
         const svg = e.querySelector('svg')?.getBoundingClientRect();
@@ -31,6 +47,18 @@ const measure = () => evaluate(`(() => {
         right:rect('.mod-right-split'), ribbon:rect('.workspace-ribbon'),
         tab:rect('.mod-root .workspace-tab-header.is-active'),
         page:rect('.mod-root .workspace-leaf-content'),
+        fileHeader:rect('[data-type="file-explorer"] .nav-header'),
+        fileList:rect('[data-type="file-explorer"] .nav-files-container'),
+        chatVisible:[...document.querySelectorAll('.claudian-container')].some(e => e.getBoundingClientRect().width > 0),
+        panelHeaders:[...document.querySelectorAll('.mod-sidedock .workspace-leaf-content .nav-header:first-child')]
+            .filter(e => e.getBoundingClientRect().width > 0 && e.querySelector('.nav-action-button'))
+            .map(e => { const r = e.getBoundingClientRect(); return {type:e.closest('.workspace-leaf-content').dataset.type,
+                x:r.x, y:r.y, width:r.width, height:r.height, buttons:controls('.nav-action-button', e),
+                groups:[...e.querySelectorAll('.nav-buttons-container :not(.nav-action-button):has(> .nav-action-button)')].map(g => {
+                    const s = getComputedStyle(g);
+                    return {border:parseFloat(s.borderTopWidth), radius:parseFloat(s.borderTopLeftRadius), height:g.getBoundingClientRect().height,
+                        gap:parseFloat(s.gap), separators:[...g.querySelectorAll('.nav-action-button')].map(b => parseFloat(getComputedStyle(b).borderLeftWidth))};
+                })}; }),
         ribbonControls:controls('.workspace-ribbon .clickable-icon'),
         fileControls:controls('[data-type="file-explorer"] .nav-action-button'),
         chatControls:controls('.claudian-view-input-nav-row .claudian-input-nav-btn') });
@@ -39,19 +67,40 @@ const measure = () => evaluate(`(() => {
 let view = measure();
 const restingPoint = [view.root.x + view.root.width / 2, 100];
 try {
+    for (const panel of view.panelHeaders) hoverPanel(panel.type, false);
     move(...restingPoint);
+    settlePanelActions();
     view = measure();
+    assert(view.fileControls.every(c => c.width <= 5 && c.icon?.width === 0), 'File toolbar buttons do not collapse into dots');
+    const restingListY = view.fileList.y;
+    for (const panel of view.panelHeaders) {
+        assert(panel.buttons.every(c => c.width <= 6 && c.icon?.width === 0), `Panel does not collapse: ${panel.type}`);
+        assert(panel.groups.every(g => g.border === 0 && g.gap >= 4 && g.separators.every(w => w === 0)),
+            `Collapsed panel still has boxes or separators: ${panel.type}`);
+        hoverPanel(panel.type);
+        settlePanelActions();
+        const expanded = measure().panelHeaders.find(p => p.type === panel.type);
+        assert(expanded.height > panel.height, `Panel does not expand: ${panel.type}`);
+        assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
+            `Panel controls squeezed or covered: ${panel.type}`);
+        assert(expanded.groups.every(g => g.radius >= g.height / 2), `Expanded group still has square corners: ${panel.type}`);
+    }
+    hoverPanel('file-explorer');
+    settlePanelActions();
+    view = measure();
+    assert(view.fileList.y > restingListY, 'Collapsed toolbar does not recover vertical space');
+    assert(view.fileControls.every(c => c.icon?.width >= 12), 'File toolbar icons do not reappear');
     assert(view.ribbon.x >= 0 && view.ribbon.right <= view.left.x + 1, 'Ribbon overlaps the sidebar');
     assert(view.left.right <= view.root.x + 1, 'Left sidebar overlaps the document');
     assert(view.root.right <= view.right.x + 1, 'Document overlaps the right sidebar');
     assert.equal(view.page.borderWidth, '0px', 'Document still has a frame');
     assert.equal(view.tab.borderWidth, '0px', 'Active tab still has an accent outline');
-    assert.equal(view.chatControls.length, 3, 'Claudian compact navigation is missing');
+    if (view.chatVisible) assert.equal(view.chatControls.length, 3, 'Claudian compact navigation is missing');
     for (const control of view.chatControls) {
         assert(control.icon?.width >= 12 && control.icon?.height >= 12,
             `Claudian icon squeezed or hidden: ${control.label}`);
     }
-    for (const group of [view.ribbonControls, view.fileControls, view.chatControls]) {
+    for (const group of [view.ribbonControls, view.fileControls, ...(view.chatVisible ? [view.chatControls] : [])]) {
         assert(group.length > 0, 'Controls missing');
         for (const [index, control] of group.entries()) {
             assert(control.width >= 20 && control.height >= 20 && control.clickable,
@@ -131,7 +180,8 @@ try {
     assert.equal(header.padding, '8px 12px', 'Table spacing is too tight');
     assert.equal(header.padding, cell.padding, 'Header and cells have different spacing');
     assert(colors.typography.every(t => t.fontsUnchanged && t.lineHeight === '1.7'), 'Document typography changed unexpectedly');
-    console.log('通过：功能按钮无重叠；编辑与阅读配色、引用分组、代码边界、表格层次和字体参数检查通过。');
+    console.log('通过：侧栏共用操作栏收放及图标可点击；功能按钮无重叠，文档配色、内容层次和字体参数检查通过。');
 } finally {
+    for (const type of forcedHeaders) hoverPanel(type, false);
     move(...restingPoint);
 }

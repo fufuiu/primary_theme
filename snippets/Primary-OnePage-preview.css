@@ -183,6 +183,132 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
     gap: 4px;
 }
 
+/* OnePage compact panel actions: shared native headers in either sidebar. */
+@media (hover: hover) and (pointer: fine) {
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
+        --panel-actions-duration: 320ms;
+        --panel-actions-easing: cubic-bezier(0.32, 0.72, 0, 1);
+        --clickable-icon-radius: 100vh;
+        --background-modifier-hover: color-mix(in oklch, rgb(var(--mono-rgb-100)) 6.7%, transparent);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+        width: fit-content;
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin: 0;
+        gap: 0;
+        padding: 2px;
+        border-radius: var(--clickable-icon-radius);
+        background: var(--background-modifier-hover);
+        transition: gap var(--panel-actions-duration) var(--panel-actions-easing),
+            padding var(--panel-actions-duration) var(--panel-actions-easing),
+            background-color var(--anim-duration-fast);
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button {
+        position: relative;
+        --icon-size: 16px;
+        --icon-stroke: 2px;
+        min-width: 40px;
+        height: auto;
+        padding: 8px;
+        border-radius: var(--clickable-icon-radius);
+        transition: padding var(--panel-actions-duration) var(--panel-actions-easing),
+            width var(--panel-actions-duration) var(--panel-actions-easing),
+            background-color var(--anim-duration-fast);
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container svg {
+        transition: width var(--panel-actions-duration) var(--panel-actions-easing),
+            height var(--panel-actions-duration) var(--panel-actions-easing);
+    }
+
+    /* Adapt nested plugin button groups without changing their actions or menus. */
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
+        min-width: 0;
+        border-radius: var(--clickable-icon-radius);
+        transition: gap var(--panel-actions-duration) var(--panel-actions-easing),
+            border-color var(--panel-actions-duration) var(--panel-actions-easing);
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) > .nav-action-button {
+        border-radius: 0;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
+        gap: 4px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-action-button {
+        border: 0;
+        border-radius: var(--clickable-icon-radius);
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-buttons-container {
+        gap: 4px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        flex-wrap: nowrap;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-action-button {
+        padding: 2px !important;
+        width: 0 !important;
+        min-width: 0;
+        flex: 0;
+        background: var(--background-modifier-hover) !important;
+        box-shadow: none !important;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-buttons-container svg {
+        width: 0;
+        height: 0;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-action-button::after {
+        font-size: 0;
+        opacity: 0;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-action-button[aria-disabled="true"] {
+        opacity: var(--icon-opacity);
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:focus-within :is(.nav-buttons-container, .nav-action-button, svg),
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:focus-within .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
+        transition: none;
+    }
+
+    body.theme-light:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
+        --icon-color: #857d70;
+    }
+
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button:hover:not([aria-disabled="true"]) {
+        color: var(--text-normal);
+        background: var(--background-modifier-hover);
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container,
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button,
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container svg,
+    body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
+        transition: none;
+    }
+}
+
 body.theme-light:not(.is-mobile) .callout {
     --callout-title-color: color-mix(in srgb, rgb(var(--callout-color)) 32%, var(--text-normal));
     border-inline-start: 2px solid rgba(var(--callout-color), 0.5);
