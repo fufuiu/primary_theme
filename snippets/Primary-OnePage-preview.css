@@ -201,6 +201,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         width: fit-content;
         max-width: 100%;
         flex-wrap: wrap;
+        align-items: center;
         margin: 0;
         gap: 2px;
         padding: 0;
@@ -215,7 +216,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         position: relative;
         --icon-size: 18px;
         --icon-stroke: 2px;
-        height: 100%;
+        height: auto;
         padding: 8px;
         border-radius: var(--clickable-icon-radius);
         transition: padding var(--panel-actions-duration) var(--panel-actions-easing),
@@ -231,6 +232,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
     /* Adapt nested plugin button groups without changing their actions or menus. */
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
         min-width: 0;
+        align-items: center;
         border-radius: var(--clickable-icon-radius);
         transition: gap var(--panel-actions-duration) var(--panel-actions-easing),
             border-color var(--panel-actions-duration) var(--panel-actions-easing);

@@ -84,6 +84,8 @@ try {
         assert(expanded.height > panel.height, `Panel does not expand: ${panel.type}`);
         assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
             `Panel controls squeezed or covered: ${panel.type}`);
+        assert(expanded.buttons.every(c => c.height <= 36) && expanded.groups.every(g => g.height <= 36),
+            `Wrapped panel stretches button heights: ${panel.type}`);
         assert.equal(expanded.background, 'rgba(0, 0, 0, 0)', 'OnePage Linux toolbar should have a transparent surface');
         assert.equal(expanded.gap, '2px', 'OnePage Linux toolbar spacing differs');
         assert(expanded.buttons.every(c => c.icon?.width === 18), 'OnePage Linux icon size differs');
