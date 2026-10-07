@@ -120,29 +120,20 @@ body.theme-light:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-
     box-shadow: none;
 }
 
-/* Reveal the ribbon at the left edge or on keyboard focus; no sidebar overlap at rest. */
-body.theme-light:not(.is-mobile).show-ribbon
-    .workspace-ribbon:is(.mod-left, .mod-primary):not(.is-collapsed) {
-    position: absolute;
-    inset-inline-start: 0;
-    top: var(--header-height);
-    bottom: 8px;
-    height: auto;
-    margin: 0;
-    z-index: 20;
+/* Preserve native ribbon positioning: its absolute toggle belongs to the window header. */
+body.theme-light:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary) {
     background: var(--background-secondary);
     border: none;
-    transform: translateX(calc(4px - var(--ribbon-width)));
-    transition: none;
 }
 
-body.theme-light:not(.is-mobile).show-ribbon
-    .workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within) {
-    transform: none;
+body.theme-light:not(.is-mobile) .workspace-ribbon .sidebar-toggle-button {
+    background: var(--background-secondary);
 }
 
-body.theme-light:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary)::before {
-    display: none;
+body.theme-light:not(.is-mobile) .workspace-split.mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
+    margin-inline-start: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle {
@@ -188,28 +179,6 @@ body.theme-light:not(.is-mobile) .nav-files-container {
 body.theme-light:not(.is-mobile) .nav-buttons-container {
     padding-left: 0;
     gap: 4px;
-}
-
-body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
-    justify-content: center;
-    min-height: 27px;
-}
-
-body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"]
-    .nav-header:not(:hover):not(:focus-within) .nav-action-button {
-    flex: 0 0 4px;
-    width: 4px;
-    height: 4px;
-    min-width: 4px;
-    padding: 2px;
-    border-radius: 50%;
-    background: var(--background-modifier-border);
-    overflow: hidden;
-}
-
-body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"]
-    .nav-header:not(:hover):not(:focus-within) .nav-action-button svg {
-    visibility: hidden;
 }
 
 body.theme-light:not(.is-mobile) .callout {
