@@ -205,3 +205,82 @@ body.theme-light:not(.is-mobile) .workspace-split
     border-color: transparent;
     box-shadow: none;
 }
+
+/* Reading rhythm and content surfaces stay inside the document views. */
+body.theme-light:not(.is-mobile) :is(.markdown-preview-view, .markdown-source-view) {
+    --file-line-width: 700px;
+    --line-height-normal: 1.7;
+    --blockquote-background-color: var(--background-primary-alt);
+    --blockquote-border-color: var(--text-muted);
+    --code-border-width: 1px;
+    --code-border-color: var(--background-modifier-border);
+    --code-radius: 10px;
+    --table-background: transparent;
+    --table-header-background: transparent;
+    --table-header-background-hover: transparent;
+    --table-column-alt-background: transparent;
+    --table-cell-padding: 8px 12px;
+    --table-border-color: color-mix(in srgb, var(--text-muted) 15%, transparent);
+    --table-header-color: color-mix(in srgb, var(--text-accent) 55%, var(--text-muted));
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered blockquote {
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px 12px 32px;
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered blockquote::before {
+    content: "";
+    position: absolute;
+    inset-block: 12px;
+    inset-inline-start: 16px;
+    border-inline-start: 2px solid var(--blockquote-border-color);
+    pointer-events: none;
+}
+
+body.theme-light:not(.is-mobile) .markdown-source-view.is-live-preview .HyperMD-quote {
+    border: solid var(--blockquote-background-color);
+    border-width: 0 16px;
+    background: var(--blockquote-background-color);
+}
+
+body.theme-light:not(.is-mobile) .markdown-source-view.is-live-preview .HyperMD-quote::before {
+    width: 0;
+}
+
+body.theme-light:not(.is-mobile) .markdown-source-view.is-live-preview .HyperMD-quote:not(.HyperMD-quote + .HyperMD-quote) {
+    border-top-width: 12px;
+    border-start-start-radius: 8px;
+    border-start-end-radius: 8px;
+}
+
+body.theme-light:not(.is-mobile) .markdown-source-view.is-live-preview .HyperMD-quote:not(:has(+ .HyperMD-quote)) {
+    border-bottom-width: 12px;
+    border-end-start-radius: 8px;
+    border-end-end-radius: 8px;
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered code:not(pre code),
+body.theme-light:not(.is-mobile) .cm-s-obsidian .cm-inline-code:not(.cm-formatting, .HyperMD-codeblock *) {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 5px;
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered table {
+    border-collapse: collapse;
+    border: none;
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered th {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid color-mix(in srgb, var(--text-accent) 45%, var(--text-muted));
+    padding: 8px 12px;
+}
+
+body.theme-light:not(.is-mobile) .markdown-rendered td {
+    border: 1px solid var(--table-border-color);
+    padding: 8px 12px;
+}
