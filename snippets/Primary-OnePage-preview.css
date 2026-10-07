@@ -222,6 +222,7 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         padding: 8px;
         border-radius: var(--clickable-icon-radius);
         transition: padding var(--panel-actions-duration) var(--panel-actions-easing),
+            min-width var(--panel-actions-duration) var(--panel-actions-easing),
             width var(--panel-actions-duration) var(--panel-actions-easing),
             background-color var(--anim-duration-fast);
     }
@@ -271,11 +272,13 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
         width: 0 !important;
         min-width: 0;
         flex: 0;
+        transition-property: padding, width, background-color;
         background: var(--background-modifier-hover) !important;
         box-shadow: none !important;
     }
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-buttons-container svg {
+        flex-shrink: 1;
         width: 0;
         height: 0;
     }

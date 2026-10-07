@@ -188,7 +188,61 @@ try {
     assert.equal(header.padding, '8px 12px', 'Table spacing is too tight');
     assert.equal(header.padding, cell.padding, 'Header and cells have different spacing');
     assert(colors.typography.every(t => t.fontsUnchanged && t.lineHeight === '1.7'), 'Document typography changed unexpectedly');
-    console.log('通过：侧栏共用操作栏收放及图标可点击；功能按钮无重叠，文档配色、内容层次和字体参数检查通过。');
+    const motion = evaluate(`(async () => {
+        const fs = require('fs'), root = ${JSON.stringify(require('node:path').resolve(__dirname, '..'))};
+        const base = [...document.styleSheets].filter(s => s.href?.includes('app.css'))
+            .map(s => [...s.cssRules].map(r => r.cssText).join(String.fromCharCode(10))).join(String.fromCharCode(10));
+        const markup = document.querySelector('[data-type="file-explorer"] .nav-header').outerHTML;
+        const styles = [fs.readFileSync(root + '/../OnePage/theme.css', 'utf8'),
+            fs.readFileSync(root + '/theme.css', 'utf8') + fs.readFileSync(root + '/snippets/Primary-OnePage-preview.css', 'utf8')];
+        const results = [];
+        for (const css of styles) {
+            const frame = document.createElement('iframe');
+            frame.style.cssText = 'position:fixed;left:-9999px;width:338px;height:200px';
+            document.body.appendChild(frame);
+            try {
+                frame.srcdoc = '<style>' + base + '</style><style>' + css.replaceAll(':hover', '.motion-hover') + '</style>' +
+                    '<style>html,body{contain:none!important;height:auto;display:block}.workspace{height:auto;display:block}' +
+                    '.workspace-split.mod-sidedock{width:338px!important;height:auto!important;margin:0!important;padding:0!important}' +
+                    '.workspace-leaf-content{height:auto}</style><body class="mod-linux obsidian-app theme-light">' +
+                    '<div class="workspace"><div class="workspace-split mod-sidedock"><div class="workspace-leaf-content">' +
+                    '<div class="view-content">' + markup + '</div></div></div></div>';
+                await new Promise(resolve => frame.onload = resolve);
+                const header = frame.contentDocument.querySelector('.nav-header'),
+                    row = header.querySelector('.nav-buttons-container'), button = header.querySelector('.nav-action-button'),
+                    svg = button.querySelector('svg'), style = e => frame.contentWindow.getComputedStyle(e);
+                const snapshot = () => ({row:row.getBoundingClientRect().width, button:button.getBoundingClientRect().width,
+                    icon:svg.getBoundingClientRect().width, height:header.getBoundingClientRect().height});
+                style(svg).width;
+                header.getAnimations({subtree:true}).forEach(a => a.finish());
+                const traces = [];
+                for (const opening of [true, false]) {
+                    header.classList.toggle('motion-hover', opening);
+                    style(svg).width;
+                    const animations = header.getAnimations({subtree:true});
+                    animations.forEach(a => a.pause());
+                    const samples = [];
+                    for (const time of [0,16,32,64,120,200,320]) {
+                        animations.forEach(a => a.currentTime = time);
+                        samples.push(snapshot());
+                    }
+                    animations.forEach(a => a.finish());
+                    style(svg).width;
+                    traces.push(samples);
+                }
+                results.push(traces);
+            } finally { frame.remove(); }
+        }
+        return JSON.stringify(results);
+    })()`);
+    const [reference, current] = motion;
+    for (const direction of [0,1]) for (const [index, sample] of current[direction].entries()) {
+        for (const key of ['row','button','icon','height']) {
+            assert(Math.abs(sample[key] - reference[direction][index][key]) <= 0.15,
+                `Animation diverges from OnePage: direction=${direction}, frame=${index}, ${key}`);
+        }
+    }
+    console.log('通过：动画中间帧与 OnePage 一致；侧栏操作栏单行、图标可点击，文档配色、内容层次和字体参数检查通过。');
 } finally {
     for (const type of forcedHeaders) hoverPanel(type, false);
     move(...restingPoint);
