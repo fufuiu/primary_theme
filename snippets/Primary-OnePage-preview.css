@@ -1,9 +1,9 @@
 /* OnePage-inspired light palette and quiet sidebars. Toggle as a CSS snippet. */
 body.theme-light:not(.is-mobile) {
-    --color-l-gray-10: #fffdf9;
-    --color-l-gray-20: #faf7f1;
-    --color-l-gray-30: #f3efe7;
-    --color-l-gray-40: #f4f2ee;
+    --color-l-gray-10: #f5f1e9;
+    --color-l-gray-20: #f5f1e9;
+    --color-l-gray-30: #eee9df;
+    --color-l-gray-40: #f1eee8;
     --color-l-gray-50: #e9e4db;
     --color-l-gray-60: #ddd8cf;
     --color-l-gray-70: #c6beb1;
@@ -14,10 +14,10 @@ body.theme-light:not(.is-mobile) {
     --color-l-gray-120: #51493f;
     --color-l-gray-130: #3d3730;
     --color-l-gray-140: #2d2822;
-    --background-primary: #faf7f1;
-    --background-primary-alt: #f3efe7;
-    --background-secondary: #f4f2ee;
-    --background-secondary-alt: #e9e9e9;
+    --background-primary: #f5f1e9;
+    --background-primary-alt: #eee9df;
+    --background-secondary: #f1eee8;
+    --background-secondary-alt: var(--background-primary);
     --background-modifier-border: #ddd8cf;
     --background-modifier-border-hover: #cbc4b8;
     --background-modifier-border-focus: #0e6e63;
@@ -48,11 +48,15 @@ body.theme-light:not(.is-mobile) {
     --h5-color: var(--text-normal);
     --h6-color: var(--text-muted);
     --inline-title-color: var(--text-normal);
-    --bold-color: #c2410c;
-    --italic-color: #4a704f;
-    --inline-code-color: var(--text-accent);
+    --bold-color: var(--text-normal);
+    --italic-color: var(--text-normal);
+    --inline-code-color: var(--text-normal);
     --inline-code-bg: var(--background-primary-alt);
     --editor-bg-color: var(--background-primary);
+    --editor-border-width: 0px;
+    --editor-border-radius: 0px;
+    --editor-pane-margin: 0px;
+    --file-header-border-width: 0px;
     --editor-border-color: var(--background-modifier-border);
     --file-header-border-color: var(--background-modifier-border);
     --file-header-title-color: var(--text-normal);
@@ -60,6 +64,7 @@ body.theme-light:not(.is-mobile) {
     --tab-text-color: var(--text-muted);
     --tab-text-color-focused-active-current: var(--text-normal);
     --tab-active-shadow: none;
+    --tab-active-bg: var(--background-primary-alt);
     --ribbon-background: var(--background-secondary);
     --titlebar-background: var(--background-secondary-alt);
     --titlebar-background-focused: var(--background-secondary-alt);
@@ -94,6 +99,11 @@ body.theme-light:not(.is-mobile) {
     --graph-node-highlight-line: var(--text-accent);
     --graph-text: var(--text-muted);
     --graph-line: var(--background-modifier-border);
+    --callout-color-opacity: 6%;
+    --callout-container-shadow: none;
+    --callout-title-shadow: none;
+    --callout-content-shadow: none;
+    --callout-content-background: transparent;
     background-color: var(--background-secondary-alt);
 }
 
@@ -104,31 +114,35 @@ body.theme-light:not(.is-mobile) .workspace-split.mod-root {
 body.theme-light:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) {
     margin: 8px;
     height: calc(100% - 16px);
-    border: 1px solid var(--background-modifier-border);
+    border: none;
     border-radius: 10px;
     background: var(--background-secondary);
-    box-shadow: 0 2px 12px rgba(61, 55, 48, 0.04);
+    box-shadow: none;
 }
 
-/* Keep the ribbon visible above the single left sidebar surface. */
-body.theme-light:not(.is-mobile).show-ribbon:not(.ribbon-slideout)
-    .workspace-split.mod-left-split:not(.is-sidedock-collapsed) {
-    margin-left: calc(8px - var(--ribbon-width));
-    padding-left: var(--ribbon-width);
-}
-
-body.theme-light:not(.is-mobile).show-ribbon:not(.ribbon-slideout):has(.mod-left-split:not(.is-sidedock-collapsed))
-    .workspace-ribbon:is(.mod-left, .mod-primary) {
-    position: relative;
-    z-index: 1;
-    background: transparent;
+/* Reveal the ribbon at the left edge or on keyboard focus; no sidebar overlap at rest. */
+body.theme-light:not(.is-mobile).show-ribbon
+    .workspace-ribbon:is(.mod-left, .mod-primary):not(.is-collapsed) {
+    position: absolute;
+    inset-inline-start: 0;
+    top: var(--header-height);
+    bottom: 8px;
+    height: auto;
+    margin: 0;
+    z-index: 20;
+    background: var(--background-secondary);
     border: none;
+    transform: translateX(calc(4px - var(--ribbon-width)));
+    transition: none;
 }
 
-body.theme-light:not(.is-mobile).show-ribbon:not(.ribbon-slideout):has(.mod-left-split:not(.is-sidedock-collapsed))
-    .workspace-ribbon:is(.mod-left, .mod-primary)::before {
-    background: transparent;
-    border: none;
+body.theme-light:not(.is-mobile).show-ribbon
+    .workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within) {
+    transform: none;
+}
+
+body.theme-light:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary)::before {
+    display: none;
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle {
@@ -148,8 +162,22 @@ body.theme-light:not(.is-mobile) .workspace-ribbon .clickable-icon {
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header.is-active {
-    background: var(--nav-item-background-active);
+    background: transparent;
     border-color: transparent;
+}
+
+body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+    color: var(--text-normal);
+}
+
+body.theme-light:not(.is-mobile) .mod-root .workspace-tabs .workspace-tab-header.is-active {
+    border: none;
+    background: var(--background-primary-alt);
+}
+
+body.theme-light:not(.is-mobile) .mod-root .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+body.theme-light:not(.is-mobile) .mod-root .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+    color: var(--text-normal);
 }
 
 body.theme-light:not(.is-mobile) .nav-files-container {
@@ -160,6 +188,32 @@ body.theme-light:not(.is-mobile) .nav-files-container {
 body.theme-light:not(.is-mobile) .nav-buttons-container {
     padding-left: 0;
     gap: 4px;
+}
+
+body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+    justify-content: center;
+    min-height: 27px;
+}
+
+body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"]
+    .nav-header:not(:hover):not(:focus-within) .nav-action-button {
+    flex: 0 0 4px;
+    width: 4px;
+    height: 4px;
+    min-width: 4px;
+    padding: 2px;
+    border-radius: 50%;
+    background: var(--background-modifier-border);
+    overflow: hidden;
+}
+
+body.theme-light:not(.is-mobile) .workspace-leaf-content[data-type="file-explorer"]
+    .nav-header:not(:hover):not(:focus-within) .nav-action-button svg {
+    visibility: hidden;
+}
+
+body.theme-light:not(.is-mobile) .callout {
+    border-inline-start: 2px solid rgba(var(--callout-color), 0.5);
 }
 
 body.theme-light:not(.is-mobile) .nav-file-title:active {
