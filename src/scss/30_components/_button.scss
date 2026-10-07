@@ -1,6 +1,7 @@
 /*────────── Button ──────────*/
-.is-mobile button:not(button.clickable-icon),
-button:not(button.clickable-icon) {
+// Keep theme defaults weaker than plugin button classes in every interaction state.
+:where(.is-mobile) button:where(:not(.clickable-icon)),
+button:where(:not(.clickable-icon)) {
     font-weight: var(--component-font-weight);
     padding: var(--button-padding);
     border-radius: var(--button-radius);

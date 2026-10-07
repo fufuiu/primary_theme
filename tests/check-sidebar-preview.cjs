@@ -1,4 +1,4 @@
-// Run with Personal OSV2 open, both sidebars expanded, and Primary-OnePage-preview enabled.
+// Run with Personal OSV2 open, both sidebars expanded, Claudian in compact mode, and Primary-OnePage-preview enabled.
 const assert = require('node:assert/strict');
 const { execFileSync } = require('node:child_process');
 
@@ -21,7 +21,9 @@ const measure = () => evaluate(`(() => {
     const controls = selector => [...document.querySelectorAll(selector)].map((e, index) => {
         const r = e.getBoundingClientRect();
         const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+        const svg = e.querySelector('svg')?.getBoundingClientRect();
         return { label:e.getAttribute('aria-label')||'Sidebar toggle', index,
+            icon:svg ? {width:svg.width, height:svg.height} : null,
             x:r.x, y:r.y, width:r.width, height:r.height, right:r.right, bottom:r.bottom,
             clickable:hit===e||e.contains(hit) };
     }).filter(r => r.width > 0 && r.height > 0);
@@ -30,7 +32,8 @@ const measure = () => evaluate(`(() => {
         tab:rect('.mod-root .workspace-tab-header.is-active'),
         page:rect('.mod-root .workspace-leaf-content'),
         ribbonControls:controls('.workspace-ribbon .clickable-icon'),
-        fileControls:controls('[data-type="file-explorer"] .nav-action-button') });
+        fileControls:controls('[data-type="file-explorer"] .nav-action-button'),
+        chatControls:controls('.claudian-view-input-nav-row .claudian-input-nav-btn') });
 })()`);
 
 let view = measure();
@@ -43,7 +46,12 @@ try {
     assert(view.root.right <= view.right.x + 1, 'Document overlaps the right sidebar');
     assert.equal(view.page.borderWidth, '0px', 'Document still has a frame');
     assert.equal(view.tab.borderWidth, '0px', 'Active tab still has an accent outline');
-    for (const group of [view.ribbonControls, view.fileControls]) {
+    assert.equal(view.chatControls.length, 3, 'Claudian compact navigation is missing');
+    for (const control of view.chatControls) {
+        assert(control.icon?.width >= 12 && control.icon?.height >= 12,
+            `Claudian icon squeezed or hidden: ${control.label}`);
+    }
+    for (const group of [view.ribbonControls, view.fileControls, view.chatControls]) {
         assert(group.length > 0, 'Controls missing');
         for (const [index, control] of group.entries()) {
             assert(control.width >= 20 && control.height >= 20 && control.clickable,

@@ -3368,8 +3368,8 @@ body.sb-word-count-only .status-bar-item:not(.plugin-word-count) {
 }
 
 /*────────── Button ──────────*/
-.is-mobile button:not(button.clickable-icon),
-button:not(button.clickable-icon) {
+:where(.is-mobile) button:where(:not(.clickable-icon)),
+button:where(:not(.clickable-icon)) {
   font-weight: var(--component-font-weight);
   padding: var(--button-padding);
   border-radius: var(--button-radius);
@@ -3377,80 +3377,80 @@ button:not(button.clickable-icon) {
   transition: var(--background-anim);
   cursor: var(--cursor);
 }
-.is-mobile button:not(button.clickable-icon):active,
-button:not(button.clickable-icon):active {
+:where(.is-mobile) button:where(:not(.clickable-icon)):active,
+button:where(:not(.clickable-icon)):active {
   background: var(--interactive-normal);
   padding: var(--button-padding-active);
   box-shadow: var(--button-shadow-active);
   transition: var(--button-anim);
 }
-.is-mobile button:not(button.clickable-icon):focus-visible,
-button:not(button.clickable-icon):focus-visible {
+:where(.is-mobile) button:where(:not(.clickable-icon)):focus-visible,
+button:where(:not(.clickable-icon)):focus-visible {
   background: var(--interactive-normal-hover);
   box-shadow: var(--button-shadow-focus);
 }
-.is-mobile button:not(button.clickable-icon).mod-cta,
-button:not(button.clickable-icon).mod-cta {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-cta,
+button:where(:not(.clickable-icon)).mod-cta {
   box-shadow: var(--button-accent-shadow);
 }
-.is-mobile button:not(button.clickable-icon).mod-cta:hover,
-button:not(button.clickable-icon).mod-cta:hover {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-cta:hover,
+button:where(:not(.clickable-icon)).mod-cta:hover {
   box-shadow: var(--button-accent-shadow-hover);
 }
-.is-mobile button:not(button.clickable-icon).mod-cta:active,
-button:not(button.clickable-icon).mod-cta:active {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-cta:active,
+button:where(:not(.clickable-icon)).mod-cta:active {
   background: var(--interactive-accent);
   box-shadow: var(--button-accent-shadow-active);
 }
-.is-mobile button:not(button.clickable-icon).mod-cta:focus-visible,
-button:not(button.clickable-icon).mod-cta:focus-visible {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-cta:focus-visible,
+button:where(:not(.clickable-icon)).mod-cta:focus-visible {
   background: var(--interactive-accent-hover);
   box-shadow: var(--button-shadow-focus);
 }
-.is-mobile button:not(button.clickable-icon).mod-warning,
-button:not(button.clickable-icon).mod-warning {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-warning,
+button:where(:not(.clickable-icon)).mod-warning {
   color: var(--text-on-accent);
   background-color: var(--background-modifier-error);
   box-shadow: var(--button-accent-shadow);
 }
-.is-mobile button:not(button.clickable-icon).mod-warning:hover,
-button:not(button.clickable-icon).mod-warning:hover {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-warning:hover,
+button:where(:not(.clickable-icon)).mod-warning:hover {
   background-color: var(--background-modifier-error-hover);
   box-shadow: var(--button-accent-shadow-hover);
 }
-.is-mobile button:not(button.clickable-icon).mod-warning:active,
-button:not(button.clickable-icon).mod-warning:active {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-warning:active,
+button:where(:not(.clickable-icon)).mod-warning:active {
   background: var(--background-modifier-error);
   box-shadow: var(--button-accent-shadow-active);
 }
-.is-mobile button:not(button.clickable-icon).mod-warning:focus-visible,
-button:not(button.clickable-icon).mod-warning:focus-visible {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-warning:focus-visible,
+button:where(:not(.clickable-icon)).mod-warning:focus-visible {
   background: var(--background-modifier-error-hover);
   box-shadow: var(--button-accent-shadow-focus);
 }
-.is-mobile button:not(button.clickable-icon).mod-destructive,
-button:not(button.clickable-icon).mod-destructive {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-destructive,
+button:where(:not(.clickable-icon)).mod-destructive {
   color: var(--text-on-accent);
   background: var(--background-modifier-warning);
   box-shadow: var(--button-accent-shadow);
 }
-.is-mobile button:not(button.clickable-icon).mod-destructive:hover,
-button:not(button.clickable-icon).mod-destructive:hover {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-destructive:hover,
+button:where(:not(.clickable-icon)).mod-destructive:hover {
   background: var(--background-modifier-warning-hover);
   box-shadow: var(--button-accent-shadow-hover);
 }
-.is-mobile button:not(button.clickable-icon).mod-destructive:active,
-button:not(button.clickable-icon).mod-destructive:active {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-destructive:active,
+button:where(:not(.clickable-icon)).mod-destructive:active {
   background: var(--background-modifier-warning);
   box-shadow: var(--button-accent-shadow-active);
 }
-.is-mobile button:not(button.clickable-icon).mod-loading,
-button:not(button.clickable-icon).mod-loading {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-loading,
+button:where(:not(.clickable-icon)).mod-loading {
   opacity: var(--disabled-component-opacity);
   cursor: wait;
 }
-.is-mobile button:not(button.clickable-icon).mod-cancel,
-button:not(button.clickable-icon).mod-cancel {
+:where(.is-mobile) button:where(:not(.clickable-icon)).mod-cancel,
+button:where(:not(.clickable-icon)).mod-cancel {
   color: var(--text-normal);
 }
 
