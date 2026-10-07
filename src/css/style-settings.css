@@ -1,6 +1,6 @@
 /* @settings
 
-name: Primary Theme Settings
+name: Primary 主题设置
 id: primary-theme
 settings:
 	-
@@ -8,124 +8,124 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: How To Use
+		title: 使用指南
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 📚 Visit the [Full Guide](https://primary-theme.github.io/) for the complete documentation including theme features, font guides, customization guide and more
+        description: 📚 查看[完整指南](https://primary-theme.github.io/)，了解主题功能、字体指南、个性化设置等详细说明。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🎯 Check out the [Roadmap](https://git.new/primary/project-tracker) to get a view of Primary's Development
+        description: 🎯 查看[开发路线图](https://git.new/primary/project-tracker)，了解 Primary 的开发计划。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 📮 Subscribe to [Primary Theme Updates](https://primarytheme.substack.com/subscribe) to get notified of Primary updates, new features, and goodies right in your inbox!
+        description: 📮 订阅 [Primary 主题更新](https://primarytheme.substack.com/subscribe)，通过邮件接收主题更新、新功能和福利！
 	-
 		id: interface
 		type: heading
 		level: 1
 		collapsed: true
-		title: Interface
+		title: 界面
     -
 		id: interface_typography
 		type: heading
 		level: 2
 		collapsed: true
-		title: Typography
+		title: 字体与排版
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: ⚙️ To change fonts, go to Settings → Appearance → Font, and select the font you want to use (must be installed in your system).
+        description: ⚙️ 更改字体请前往「设置 → 外观 → 字体」，选择已安装在系统中的字体。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🌿 Primary v1.0 user? Want to use the original Karla font? Read the [Karla Font Guide](https://primary-theme.github.io/guides/font-recommendations/karla/) to learn how to get back into using it.
+        description: 🌿 使用过 Primary v1.0，想用回原来的 Karla 字体？请阅读 [Karla 字体指南](https://primary-theme.github.io/guides/font-recommendations/karla/)，了解设置方法。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🌸 Visit the [Font Recommendation Guide](https://primary-theme.github.io/guides/font-recommendations/overview/) for more curated font options for Primary! The guide includes a setup tutorial.
+        description: 🌸 查看[字体推荐指南](https://primary-theme.github.io/guides/font-recommendations/overview/)，获取更多适合 Primary 的字体及设置教程。
     -
         id: typography_features
         type: heading
         level: 3
         collapsed: true
-        title: Font Features
+        title: 字体特性
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: Some fonts offer stylistic alternates to glyphs of their fonts. This can be activated via a CSS property called font feature settings. `1` means "feature is turned on", and `0` means "feature is turned off".
+        description: 部分字体提供字形变体，可通过 CSS 的 font-feature-settings 属性启用。`1` 表示启用特性，`0` 表示关闭特性。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: This setting is quite technical so if you aren't sure how to use it please refer to the [MDN guide on font-feature-settings](https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings). <br><br> Not all fonts offer the same stylistic alternates so it's best to check out your font's respective manuals or specifications.
+        description: 此设置涉及字体技术，使用前可参考 [MDN 的 font-feature-settings 指南](https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings)。<br><br> 各字体支持的字形变体不同，请查阅相应字体的手册或规范。
     -
         id: interface-font-feature
         type: variable-text
-        title: Interface Font's Feature Settings
+        title: 界面字体特性设置
         default: '"calt" 1, "case" 0, "ccmp" 1, "ss03" 1, "cv01" 1, "cv05" 1, "cv06" 1, "cv08" 0, "cv11" 1, "cv12" 0, "cv13" 0'
     -
         id: text-font-feature
         type: variable-text
-        title: Text Font's Feature Settings
+        title: 正文字体特性设置
         default: '"calt" 1, "case" 0, "ccmp" 1, "ss03" 1, "cv01" 1, "cv05" 1, "cv06" 1, "cv08" 0, "cv11" 1, "cv12" 0, "cv13" 0'
     -
         id: monospace-font-feature
         type: variable-text
-        title: Monospace Font's Feature Settings
+        title: 等宽字体特性设置
         default: '"calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss05" 1, "ss19" 1, "zero" 1'
     -
         id: typography_sizes
         type: heading
         level: 3
         collapsed: true
-        title: Interface Font Sizes
+        title: 界面字号
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: This section targets interface font sizes, meaning text that is not in the markdown editor. To change the size of the editor text, please use Obsidian's built-in setting. You can find this under Settings → Appearance → Font Size.
+        description: 本节调整界面字号，即 Markdown 编辑器以外的文字大小。编辑器正文字号请在 Obsidian 的「设置 → 外观 → 字体大小」中调整。
     -
         id: font-ui-smallest
         type: variable-number
-        title: Smallest UI Font Size
-        description: Acceptable font size unit is only in px.
+        title: 界面字号（最小）
+        description: 字号单位仅支持 px。
         default: 11
         format: px
     -
         id: font-ui-smaller
         type: variable-number
-        title: Smaller UI Font Size
-        description: Acceptable font size unit is only in px.
+        title: 界面字号（较小）
+        description: 字号单位仅支持 px。
         default: 12
         format: px
     -
         id: font-ui-small
         type: variable-number
-        title: Small UI Font Size
-        description: Acceptable font size unit is only in px.
+        title: 界面字号（小）
+        description: 字号单位仅支持 px。
         default: 13
         format: px
     -
         id: font-ui-medium
         type: variable-number
-        title: Medium UI Font Size
-        description: Acceptable font size unit is only in px.
+        title: 界面字号（中）
+        description: 字号单位仅支持 px。
         default: 15
         format: px
     -
         id: font-ui-large
         type: variable-number
-        title: Large UI Font Size
-        description: Acceptable font size unit is only in px.
+        title: 界面字号（大）
+        description: 字号单位仅支持 px。
         default: 20
         format: px
     -
@@ -133,148 +133,148 @@ settings:
         type: heading
         level: 3
         collapsed: true
-        title: Font Weight
+        title: 字重
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: ☝️ By default with Inter, the font is a little bit thin. To increase readability, I increased the base font weight for each category by 50. If you decide to use your own font, the options below are good to use if you find the font you're using a bit too thick. You can bring them back down by 50 to use the original defaults weights.
+        description: ☝️ Inter 字体默认较细。为提高可读性，主题将各档基础字重增加了 50。如果改用其他字体后觉得文字过粗，可将以下数值减少 50，恢复原始字重。
     -
         id: font-thin
         type: variable-number
-        title: Thin Font Weight
+        title: 极细字重
         default: 150
     -
         id: font-extralight
         type: variable-number
-        title: Extralight Font Weight
+        title: 特细字重
         default: 250
     -
         id: font-light
         type: variable-number
-        title: Light Font Weight
+        title: 细字重
         default: 350
     -
         id: font-normal
         type: variable-number
-        title: Normal Font Weight
+        title: 常规字重
         default: 450
     -
         id: font-medium
         type: variable-number
-        title: Medium Font Weight
+        title: 中等字重
         default: 550
     -
         id: font-semibold
         type: variable-number
-        title: Semibold Font Weight
+        title: 半粗字重
         default: 650
     -
         id: font-bold
         type: variable-number
-        title: Bold Font Weight
+        title: 粗字重
         default: 750
     -
         id: font-extrabold
         type: variable-number
-        title: Extrabold Font Weight
+        title: 特粗字重
         default: 850
     -
         id: font-black
         type: variable-number
-        title: Black Font Weight
+        title: 极粗字重
         default: 900
     -
         id: bold-modifier
         type: variable-number
-        title: Bold Modifier
-        description: This is an addend to Normal Font Weight for certain interface components that Obsidian wanted to turn into bold.
+        title: 加粗增量
+        description: 部分界面组件需要加粗时，会在常规字重的基础上增加此数值。
         default: 200
 	-
 		id: interface_animations
 		type: heading
 		level: 2
 		collapsed: true
-		title: Animations and Effects
+		title: 动画与效果
 	-
 		id: zero-tab-anim
 		type: class-toggle
-		title: Remove Jumpy Tab Animations
+		title: 禁用标签页弹跳动画
 	-
 		id: zero-popup-popdown
 		type: class-toggle
-		title: Remove Popup and Pop Down Animations
+		title: 禁用弹窗展开与收起动画
 	-
 		id: zero-popup-blur
 		type: class-toggle
-		title: Remove Popup Background Blur
-        description: This removes the background blur when opening the Settings, Command Palette, Quick Switcher, and other pop up boxes.This is a good option to toggle on if you are experiencing unreconcilable buggy-ness and visual issues with Primary. You may also toggle this on if you don't prefer the background blur, or just need some performance boost (especially for bigger vaults).
+		title: 禁用弹窗背景模糊
+        description: 移除设置、命令面板、快速切换及其他弹窗打开时的背景模糊。如果遇到主题显示异常、不喜欢背景模糊，或希望提高性能（尤其是大型仓库），可启用此选项。
 	-
 		id: interface_ribbon
 		type: heading
 		level: 2
 		collapsed: true
-		title: Ribbon
+		title: 侧边工具栏
     -
         id: ribbon_styles
         type: class-select
-        title: Ribbon Style
+        title: 侧边工具栏样式
         allowEmpty: false
         default: ribbon-default
         options:
             - 
-                label: Docked
+                label: 固定显示
                 value: ribbon-default
             -
-                label: Slide Out on Hover
+                label: 悬停时滑出
                 value: ribbon-slideout
     -
         id: ribbon-background
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Ribbon Background Color
+        title: 侧边工具栏背景颜色
         default-light: 'hsla(34, 34%, 90%, 1)'
         default-dark: 'hsla(31, 17%, 12%, 1)'
     -
         id: ribbon-border-width
         type: variable-text
-        title: Ribbon Border Width
-        description: If you want to remove the border, set this to 0px.
+        title: 侧边工具栏边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: ribbon-border-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Ribbon Border Color
+        title: 侧边工具栏边框颜色
         default-light: 'hsla(37, 38%, 83%, 1)'
         default-dark: 'hsla(30, 22%, 18%, 1)'
     -
         id: ribbon-radius
         type: variable-text
-        title: Ribbon Top Right Border Roundness
-        description: The roundness value's order goes top left, top right, bottom right, bottom left.
+        title: 侧边工具栏圆角
+        description: 圆角数值依次对应左上、右上、右下、左下。
         default: 0px 12px 12px 0px
     -
         id: ribbon-width
         type: variable-number
-        title: Ribbon Width
-        description: Adjust your ribbon's width. Unit is in px only.
+        title: 侧边工具栏宽度
+        description: 调整侧边工具栏宽度，单位仅支持 px。
         default: 44
         format: px
     -
         id: ribbon-icon
         type: variable-number
-        title: Ribbon Icon Size
-        description: Adjust your ribbon's icon size. Unit is in px only.
+        title: 侧边工具栏图标大小
+        description: 调整侧边工具栏图标大小，单位仅支持 px。
         default: 15
         format: px
     -
         id: ribbon-icon-spacing
         type: variable-number
-        title: Ribbon Icons Spacing
-        description: Adjust the top and bottom space between your ribbon's icons.
+        title: 侧边工具栏图标间距
+        description: 调整侧边工具栏图标之间的上下间距。
         default: 4
         format: px
 	-
@@ -282,100 +282,100 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Editor
+		title: 编辑器
     -
         id: interface_editor-bg
         type: class-select
-        title: Editor Background Type
+        title: 编辑器背景类型
         allowEmpty: false
         default: editor-bg-default
         options:
             -
-                label: Plain Color
+                label: 纯色
                 value: editor-bg-default
             -
-                label: Line Grid
+                label: 方格
                 value: editor-bgpattern-linegrid
             -
-                label: Dot Grid
+                label: 点阵
                 value: editor-bgpattern-dotgrid
     -
         id: editor-bg-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Editor Background Color
-        description: Sets the size of the grid, dotted grid, or image
+        title: 编辑器背景颜色
+        description: 设置编辑器的背景颜色。
         default-light: 'hsla(35, 36%, 96%, 1)'
         default-dark: 'hsla(30, 19%, 14%, 1)'
     -
         id: editor-bgpattern-size
         type: variable-text
-        title: Editor Background Size for Pattern Background
-        description: Sets the size of the line grid or dot grid
+        title: 编辑器背景图案尺寸
+        description: 设置方格或点阵的尺寸。
         default: 50px 50px
     -
         id: editor-bgpattern-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Editor Background's Pattern Color
-        description: Only available for line grid or dot grid background types. Sets the color of the line grid, dot grid. For line grid, it will take the color input and reduce it to 30% opacity.
+        title: 编辑器背景图案颜色
+        description: 仅适用于方格或点阵背景。设置图案颜色时，方格背景会将所选颜色的不透明度降低至 30%。
         default-light: 'hsla(37, 38%, 83%, 1)'
         default-dark: 'hsla(31, 27%, 24%, 1)'
     -
         id: editor-border-width
         type: variable-text
-        title: Editor Border Width
+        title: 编辑器边框宽度
         default: 1px
     -
         id: editor-border-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Editor Border Color
+        title: 编辑器边框颜色
         default-light: 'hsla(37, 38%, 83%, 1)'
         default-dark: 'hsla(28, 22%, 18%, 1)'
     -
 		id: editor-file-header
 		type: class-select
-		title: File Header
+		title: 文件顶部栏
         default: file-header-default
         options:
             -
-                label: Always Show
+                label: 始终显示
                 value: file-header-default
             -
-                label: Hide Full File Header (Shows when Hovered)
+                label: 隐藏整个文件顶部栏（悬停时显示）
                 value: file-header-hover
             -
-                label: Hide Title on File Header (Shows when Hovered)
+                label: 隐藏顶部栏标题（悬停时显示）
                 value: file-header-title-hover
     -
         id: file-header-border-width
         type: variable-text
-        title: File Header Border Width
+        title: 文件顶部栏边框宽度
         default: 1px
     -
         id: file-header-border-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: File Header Border Color
+        title: 文件顶部栏边框颜色
         default-light: 'hsla(37, 38%, 83%, 1)'
         default-dark: 'hsla(28, 22%, 18%, 1)'
     -
         id: file-line-width
         type: variable-text
-        title: File Readable Line Width
-        description: You may use any CSS units like em, rem, ch, px.
+        title: 正文行宽
+        description: 可使用 em、rem、ch、px 等 CSS 单位。
         default: 700px
     -
         id: gutter-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Gutter Number Text Color
+        title: 行号颜色
         default-light: 'hsla(36, 37%, 75%, 1)'
         default-dark: 'hsla(31, 27%, 27%, 1)'
     -
@@ -383,21 +383,21 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Active Line Gutter Number Text Color
+        title: 当前行行号颜色
         default-light: 'hsla(31, 23%, 50%, 1)'
         default-dark: 'hsla(34, 24%, 40%, 1)'
     -
 		id: active-line-highlight
 		type: class-toggle
-		title: Toggle Active Line Highlighting
-        description: Adds background color to active line.
+		title: 高亮当前行
+        description: 为当前行添加背景颜色。
     -
         id: active-line-bg
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Active Line Background Color
-        description: Only works when Active Line Highlighting is turned on.
+        title: 当前行背景颜色
+        description: 仅在启用「高亮当前行」时生效。
         default-light: 'hsla(36, 38%, 98%, 1)'
         default-dark: 'hsla(33, 20%, 16%, 1)'
 	-
@@ -405,49 +405,49 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Status Bar
+		title: 状态栏
     -
         id: interface_status-bar-style
         type: class-select
-        title: Status Bar Style
+        title: 状态栏样式
         allowEmpty: false
         default: sb-default
         options:
             -
-                label: On Top
+                label: 叠放在内容上方
                 value: sb-default
             -
-                label: Visible Full Length
+                label: 全宽显示
                 value: sb-style-full
             -
-                label: Slide Up Full Length
+                label: 全宽向上滑出
                 value: sb-style-slideupfull
             -
-                label: Slide Out
+                label: 滑出
                 value: sb-style-slideout
             -
-                label: Floating
+                label: 悬浮
                 value: sb-style-floating
     -
         id: interface_status-bar-item-display
         type: class-select
-        title: Status Bar Item Visibility
+        title: 状态栏显示内容
         allowEmpty: false
         default: sb-item-default
         options:
             -
-                label: Show Everything
+                label: 显示全部
                 value: sb-item-default
             -
-                label: Sync Only
+                label: 仅显示同步状态
                 value: sb-sync-only
             -
-                label: Word Count Only
+                label: 仅显示字数统计
                 value: sb-word-count-only
     -
         id: status-bar-background
         type: variable-themed-color
-        title: Status Bar Background
+        title: 状态栏背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 34%, 90%, 1)'
@@ -455,20 +455,20 @@ settings:
     -
         id: status-bar-border-width
         type: variable-text
-        title: Status Bar Border Width
-        description: Set this to 0px if you wish to remove the status bar's border. The border width value's order goes top, right, bottom, left. The default value corresponds the roundness for the On Top style. Applying 1 value means that value is applied to all sides.
+        title: 状态栏边框宽度
+        description: 设为 0px 可移除状态栏边框。数值依次对应上、右、下、左，默认值适用于「叠放在内容上方」样式。只填一个值时应用于所有边。
         default: 1px
     -
         id: status-bar-radius
         type: variable-text
-        title: Status Bar Border Roundness
-        description: The roundness value's order goes top left, top right, bottom right, bottom left. The default value corresponds the roundness for the On Top style. Applying 1 value means that value is applied to all corners.
+        title: 状态栏圆角
+        description: 圆角数值依次对应左上、右上、右下、左下，默认值适用于「叠放在内容上方」样式。只填一个值时应用于所有角。
         default: 12px 0px 0px 12px
     -
         id: status-bar-floating-opacity
         type: variable-number-slider
-        title: Floating Style - Status Bar Opacity at Rest
-        description: Sets the opacity of the status bar at rest if Floating Status Bar style is chosen. Range goes from 0 being transparent, until 1 being completely visible.
+        title: 悬浮样式：静止时的不透明度
+        description: 选择「悬浮」状态栏样式时，设置静止状态下的不透明度。0 为完全透明，1 为完全不透明。
         min: 0
         max: 1
         step: 0.1
@@ -476,8 +476,8 @@ settings:
     -
         id: status-bar-floating-opacity-hover
         type: variable-number-slider
-        title: Floating Style - Status Bar Opacity on Hover
-        description: Sets the opacity of the status bar when hovering it if Floating Status Bar style is chosen. Range goes from 0 being transparent, until 1 being completely visible.
+        title: 悬浮样式：悬停时的不透明度
+        description: 选择「悬浮」状态栏样式时，设置鼠标悬停时的不透明度。0 为完全透明，1 为完全不透明。
         min: 0
         max: 1
         step: 0.1
@@ -487,27 +487,27 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: Components
+		title: 界面组件
     -
         id: comp_progress
         type: heading
         level: 2
         collapsed: true
-        title: Progress
+        title: 进度条
     -
         id: progress-bar-width
         type: variable-text
-        title: Progress Bar Width
+        title: 进度条宽度
         default: 220px
     -
         id: progress-bar-height
         type: variable-text
-        title: Progress Bar Height
+        title: 进度条高度
         default: 8px
     -
         id: progress-background
         type: variable-themed-color
-        title: Progress Background Color
+        title: 进度条背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 34%, 90%, 1)'
@@ -515,13 +515,13 @@ settings:
     -
         id: progress-border-width
         type: variable-text
-        title: Progress Border Widths
-        description: Applied to the background bar and the value bar.
+        title: 进度条边框宽度
+        description: 同时应用于进度条背景和进度填充区域。
         default: 1px
     -
         id: progress-bar-outline
         type: variable-themed-color
-        title: Progress Bar Border Color
+        title: 进度条边框颜色
         format: hsl
         opacity: true
         default-light: 'rgba(0, 0, 0, 0.1)'
@@ -529,13 +529,13 @@ settings:
     -
         id: progress-value-radius
         type: variable-text
-        title: Progress Inner Value Roundness
-        description: Takes in the progress bar's height by default, creating rounded corners. If you want straight corners put 0px.
+        title: 进度填充区域圆角
+        description: 默认使用进度条高度作为圆角半径。设为 0px 可使用直角。
         default: 8px
     -
         id: progress-value-outline
         type: variable-themed-color
-        title: Progress Inner Value Border Color
+        title: 进度填充区域边框颜色
         format: hsl
         opacity: true
         default-light: 'rgba(0, 0, 0, 0.18)'
@@ -543,8 +543,8 @@ settings:
     -
         id: progress-color-1
         type: variable-themed-color
-        title: Progress Color 1
-        description: Color for values 0% to 39%
+        title: 进度颜色 1
+        description: 进度为 0%～39% 时的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(4, 72%, 55%, 1)'
@@ -552,8 +552,8 @@ settings:
     -
         id: progress-color-2
         type: variable-themed-color
-        title: Progress Color 1
-        description: Color for values 40% to 59%
+        title: 进度颜色 2
+        description: 进度为 40%～59% 时的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(21, 81%, 59%, 1)'
@@ -561,8 +561,8 @@ settings:
     -
         id: progress-color-3
         type: variable-themed-color
-        title: Progress Color 1
-        description: Color for values 60% to 79%
+        title: 进度颜色 3
+        description: 进度为 60%～79% 时的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(43, 83%, 57%, 1)'
@@ -570,8 +570,8 @@ settings:
     -
         id: progress-color-4
         type: variable-themed-color
-        title: Progress Color 1
-        description: Color for values 80% to 99%
+        title: 进度颜色 4
+        description: 进度为 80%～99% 时的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(149, 49%, 39%, 1)'
@@ -580,12 +580,12 @@ settings:
         id: readme-content
         type: info-text
         markdown: true
-        description: If you want the color for progress bars valued at 100% to be a solid color, set the same color for each of the three below.
+        description: 如果希望进度达到 100% 时显示纯色，请将下面三个颜色设为相同的值。
     -
         id: progress-gradient-1
         type: variable-themed-color
-        title: Progress 100% Leftmost Color
-        description: Leftmost color in the gradient for value 100%.
+        title: 进度 100% 时的渐变左端颜色
+        description: 进度达到 100% 时，渐变左端的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(3, 59%, 64%, 1)'
@@ -593,8 +593,8 @@ settings:
     -
         id: progress-gradient-2
         type: variable-themed-color
-        title: Progress 100% Middle Color
-        description: Middle color in the gradient for value 100%
+        title: 进度 100% 时的渐变中间颜色
+        description: 进度达到 100% 时，渐变中间的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(43, 71%, 67%, 1)'
@@ -602,8 +602,8 @@ settings:
     -
         id: progress-gradient-3
         type: variable-themed-color
-        title: Progress 100% Rightmost Color
-        description: Rightmost color in the gradient for value 100%
+        title: 进度 100% 时的渐变右端颜色
+        description: 进度达到 100% 时，渐变右端的颜色。
         format: hsl
         opacity: true
         default-light: 'hsla(197, 39%, 56%, 1)'
@@ -613,89 +613,89 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: Notes and Files
+		title: 笔记与文件
 	-
 		id: nf_header
 		type: heading
 		level: 2
 		collapsed: true
-		title: Heading
+		title: 标题
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🎨 Visit the [Header Presets](https://primary-theme.github.io/guides/overview/) section in the Full Guide to import the Settings.
+        description: 🎨 查看完整指南中的[标题预设](https://primary-theme.github.io/guides/overview/)，导入预设设置。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 📖 The settings are based on CSS styling capabilities.
+        description: 📖 以下设置基于 CSS 样式属性。
 	-
 		id: nf_header-1
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 1
+		title: 一级标题
     -
         id: h1-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1.802em
     -
         id: h1-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h1-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h1-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h1-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h1-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h1-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h1-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1.2
     -
         id: h1-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -703,7 +703,7 @@ settings:
     -
         id: h1-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -711,24 +711,24 @@ settings:
     -
         id: h1-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h1-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h1-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h1-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -736,7 +736,7 @@ settings:
     -
         id: h1-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -744,7 +744,7 @@ settings:
     -
         id: h1-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -752,7 +752,7 @@ settings:
     -
         id: h1-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -760,75 +760,75 @@ settings:
     -
         id: h1-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_header-2
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 2
+		title: 二级标题
     -
         id: h2-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1.602em
     -
         id: h2-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h2-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h2-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h2-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h2-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h2-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h2-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1.2
     -
         id: h2-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -836,7 +836,7 @@ settings:
     -
         id: h2-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -844,24 +844,24 @@ settings:
     -
         id: h2-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h2-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h2-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h2-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -869,7 +869,7 @@ settings:
     -
         id: h2-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -877,7 +877,7 @@ settings:
     -
         id: h2-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -885,7 +885,7 @@ settings:
     -
         id: h2-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -893,75 +893,75 @@ settings:
     -
         id: h2-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_header-3
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 3
+		title: 三级标题
     -
         id: h3-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1.424em
     -
         id: h3-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h3-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h3-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h3-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h3-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h3-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h3-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1.3
     -
         id: h3-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -969,7 +969,7 @@ settings:
     -
         id: h3-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -977,24 +977,24 @@ settings:
     -
         id: h3-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h3-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h3-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h3-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1002,7 +1002,7 @@ settings:
     -
         id: h3-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1010,7 +1010,7 @@ settings:
     -
         id: h3-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1018,7 +1018,7 @@ settings:
     -
         id: h3-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1026,75 +1026,75 @@ settings:
     -
         id: h3-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_header-4
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 4
+		title: 四级标题
     -
         id: h4-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1.266em
     -
         id: h4-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h4-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h4-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h4-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h4-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h4-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h4-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1.4
     -
         id: h4-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -1102,7 +1102,7 @@ settings:
     -
         id: h4-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -1110,24 +1110,24 @@ settings:
     -
         id: h4-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h4-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h4-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h4-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1135,7 +1135,7 @@ settings:
     -
         id: h4-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1143,7 +1143,7 @@ settings:
     -
         id: h4-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1151,7 +1151,7 @@ settings:
     -
         id: h4-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1159,75 +1159,75 @@ settings:
     -
         id: h4-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_header-5
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 5
+		title: 五级标题
     -
         id: h5-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1.125em
     -
         id: h5-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h5-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h5-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h5-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h5-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h5-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h5-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1
     -
         id: h5-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -1235,7 +1235,7 @@ settings:
     -
         id: h5-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -1243,24 +1243,24 @@ settings:
     -
         id: h5-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h5-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h5-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h5-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1268,7 +1268,7 @@ settings:
     -
         id: h5-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1276,7 +1276,7 @@ settings:
     -
         id: h5-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1284,7 +1284,7 @@ settings:
     -
         id: h5-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1292,75 +1292,75 @@ settings:
     -
         id: h5-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_header-6
 		type: heading
 		level: 3
 		collapsed: true
-		title: Heading 6
+		title: 六级标题
     -
         id: h6-size
         type: variable-text
-        title: Font Size
+        title: 字号
         default: 1em
     -
         id: h6-font
         type: variable-text
-        title: Font Family
+        title: 字体
         default: Inter
         quotes: true
     -
         id: h6-weight
         type: variable-number
-        title: Font Weight
+        title: 字重
         default: 650
     -
         id: h6-style
         type: variable-text
-        title: Font Style
+        title: 字体样式
         default: normal
     -
         id: h6-text-align
         type: variable-text
-        title: Text Alignment
-        description: You may choose from left, center, or right.
+        title: 文本对齐
+        description: 可填 left（左对齐）、center（居中）或 right（右对齐）。
         default: left
     -
         id: h6-letter-spacing
         type: variable-text
-        title: Letter Spacing
+        title: 字间距
         default: 0px
     -
         id: h6-text-transform
         type: variable-select
-        title: Text Transform
+        title: 字母大小写
         default: normal
         options:
             -
-                label: Normal
+                label: 保持原样
                 value: normal
             -
-                label: Capitalize 1st letter of Each Word
+                label: 每个单词首字母大写
                 value: capitalize
             -
-                label: All Lowercase
+                label: 全部小写
                 value: lowercase
             -
-                label: All Uppercase
+                label: 全部大写
                 value: uppercase
     -
         id: h6-line-height
         type: variable-number
-        title: Line Height
-        description: Sets the spacing between multiple lines of text of the heading. You can use units such as px, em, rem as well.
+        title: 行高
+        description: 设置多行标题的行间距，也可使用 px、em、rem 等单位。
         default: 1
     -
         id: h6-color
         type: variable-themed-color
-        title: Color
+        title: 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -1368,7 +1368,7 @@ settings:
     -
         id: h6-bg-color
         type: variable-themed-color
-        title: Background Color
+        title: 背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 0%, 0)'
@@ -1376,24 +1376,24 @@ settings:
     -
         id: h6-vt-align-center
         type: class-toggle
-        title: Vertically Align Header to Center
-        description: If you add a background color, Obsidian has some spacing at the top for each header. Turning this on will ensure the heading has equal spacing for both top and bottom, aligning it correctly.
+        title: 标题垂直居中
+        description: 标题有背景颜色时，Obsidian 默认的顶部间距可能使文字偏下。启用后，上下间距保持一致，使标题垂直居中。
     -
         id: h6-border-width
         type: variable-text
-        title: Border Thickness
-        description: You may also have different thickness per side in the order of top, right, bottom, right (i.e. 5px 2px 3px 4px).
+        title: 边框宽度
+        description: 可为各边设置不同宽度，依次对应上、右、下、左，例如 5px 2px 3px 4px。
         default: 0px
     -
         id: h6-border-style
         type: variable-text
-        title: Border Style
-        description: You may choose from solid, dashed, dotted, and double. Same with thickness, you can have different styles per side.
+        title: 边框样式
+        description: 可填 solid（实线）、dashed（虚线）、dotted（点线）或 double（双线）。与边框宽度一样，可为各边分别设置样式。
         default: solid
     -
         id: h6-border-top-color
         type: variable-themed-color
-        title: Top Border Color
+        title: 上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1401,7 +1401,7 @@ settings:
     -
         id: h6-border-right-color
         type: variable-themed-color
-        title: Right Border Color
+        title: 右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1409,7 +1409,7 @@ settings:
     -
         id: h6-border-bottom-color
         type: variable-themed-color
-        title: Bottom Border Color
+        title: 下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1417,7 +1417,7 @@ settings:
     -
         id: h6-border-left-color
         type: variable-themed-color
-        title: Left Border Color
+        title: 左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1425,19 +1425,19 @@ settings:
     -
         id: h6-border-radius
         type: variable-text
-        title: Roundness
-        description: Add rounding to your headings. Best to use with a background color. If you'd like to have different roundness for each corner, you can set one in the order of top-left, top-right, bottom-right, bottom-left (i.e. 4px 2px 6px 3px).
+        title: 圆角
+        description: 为标题添加圆角，适合搭配背景颜色使用。可依次设置左上、右上、右下、左下圆角，例如 4px 2px 6px 3px。
         default: 0px
 	-
 		id: nf_emphasis
 		type: heading
 		level: 2
 		collapsed: true
-		title: Emphasis
+		title: 文本强调
     -
         id: bold-color
         type: variable-themed-color
-        title: Bold Text Color
+        title: 粗体文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(4, 56%, 48%, 1)'
@@ -1445,12 +1445,12 @@ settings:
     -
         id: bold-weight
         type: variable-number
-        title: Bold Text Weight
+        title: 粗体字重
         default: 750
     -
         id: italic-color
         type: variable-themed-color
-        title: Italic Text Color
+        title: 斜体文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(200, 64%, 37%, 1)'
@@ -1458,7 +1458,7 @@ settings:
     -
         id: strikethrough-color
         type: variable-themed-color
-        title: Strikethrough Text Color
+        title: 删除线文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1466,8 +1466,8 @@ settings:
     -
         id: underline-color
         type: variable-themed-color
-        title: Underlined Text Color
-        description: Not natively supported in markdown, but underline can be activated with HTML.
+        title: 下划线文字颜色
+        description: Markdown 不原生支持下划线，可通过 HTML 添加。
         format: hsl
         opacity: true
         default-light: 'hsla(31, 45%, 24%, 1)'
@@ -1475,13 +1475,13 @@ settings:
     -
         id: underline-decoration-opacity
         type: variable-text
-        title: Underlined Text Line Opacity
-        description: Not natively supported in markdown, but underline can be activated with HTML. If used, you can set the underline's line opacity from 0% (no line visibility) to 100% (full color visibility). The color is taken from the underline's text color.
+        title: 下划线不透明度
+        description: Markdown 不原生支持下划线，可通过 HTML 添加。下划线不透明度可设为 0%（完全透明）至 100%（完全不透明），颜色继承文字颜色。
         default: 22%
     -
         id: bold-italic-color
         type: variable-themed-color
-        title: Bold + Italic Text Color
+        title: 粗体 + 斜体文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(33, 54%, 17%, 1)'
@@ -1489,12 +1489,12 @@ settings:
     -
         id: bold-italic-weight
         type: variable-number
-        title: Bold + Italic Text Weight
+        title: 粗体 + 斜体字重
         default: 625
     -
         id: bold-italic-strikethrough-color
         type: variable-themed-color
-        title: Bold + Italic + Strikethrough Text Color
+        title: 粗体 + 斜体 + 删除线文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 23%, 50%, 1)'
@@ -1504,11 +1504,11 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Highlight
+		title: 高亮
     -
         id: normal-highlight-color
         type: variable-themed-color
-        title: Highlight Text Color
+        title: 高亮文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 45%, 24%, 1)'
@@ -1516,7 +1516,7 @@ settings:
     -
         id: normal-highlight-bg
         type: variable-themed-color
-        title: Highlight Background Color
+        title: 高亮背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(44, 100%, 50%, 0.2)'
@@ -1524,7 +1524,7 @@ settings:
     -
         id: bold-highlight-color
         type: variable-themed-color
-        title: Bold + Highlight Text Color
+        title: 粗体 + 高亮文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 45%, 24%, 1)'
@@ -1532,7 +1532,7 @@ settings:
     -
         id: bold-highlight-bg
         type: variable-themed-color
-        title: Bold + Highlight Background Color
+        title: 粗体 + 高亮背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(350, 84%, 63%, 0.2)'
@@ -1540,7 +1540,7 @@ settings:
     -
         id: italic-highlight-color
         type: variable-themed-color
-        title: Italic + Highlight Text Color
+        title: 斜体 + 高亮文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 45%, 24%, 1)'
@@ -1548,7 +1548,7 @@ settings:
     -
         id: italic-highlight-bg
         type: variable-themed-color
-        title: Italic + Highlight Background Color
+        title: 斜体 + 高亮背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(186, 64%, 46%, 0.2)'
@@ -1556,7 +1556,7 @@ settings:
     -
         id: strikethrough-highlight-color
         type: variable-themed-color
-        title: Strikethrough + Highlight Text Color
+        title: 删除线 + 高亮文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1564,7 +1564,7 @@ settings:
     -
         id: strikethrough-highlight-bg
         type: variable-themed-color
-        title: Strikethrough + Highlight Background Color
+        title: 删除线 + 高亮背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(44, 100%, 50%, 0.2)'
@@ -1572,7 +1572,7 @@ settings:
     -
         id: bold-italic-highlight-color
         type: variable-themed-color
-        title: Bold + Italic + Highlight Text Color
+        title: 粗体 + 斜体 + 高亮文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 45%, 24%, 1)'
@@ -1580,7 +1580,7 @@ settings:
     -
         id: bold-italic-highlight-bg
         type: variable-themed-color
-        title: Bold + Italic + Highlight Background Color
+        title: 粗体 + 斜体 + 高亮背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(74, 69%, 44%, 0.2)'
@@ -1590,44 +1590,44 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Link
+		title: 链接
     -
         id: link-underline-offset
         type: variable-text
-        title: All Links Underline Offset
-        description: This changes how far the underline is from the base of the link's letters.
+        title: 链接下划线偏移
+        description: 调整下划线与链接文字底部之间的距离。
         default: 2px
     -
         id: link-decoration-thickness
         type: variable-text
-        title: All Links Underline Thickness
+        title: 链接下划线宽度
         default: 1.5px
     -
         id: link-decoration-opacity
         type: variable-text
-        title: Link Underline Opacity
-        description: Set from 0% (no underline visibility) to 100% (full underline color visibility). Underline color inherits the Link's color.
+        title: 链接下划线不透明度
+        description: 设为 0%（完全透明）至 100%（完全不透明）。下划线颜色继承链接颜色。
         default: 22%
     -
         id: no-decor-link
         type: class-toggle
-        title: Remove Link Underline
+        title: 移除链接下划线
     -
         id: link-opacity-active
         type: variable-number
-        title: Link Opacity when Pressed
+        title: 链接按下时的不透明度
         default: 0.5
 	-
 		id: nf_link
 		type: heading
 		level: 3
 		collapsed: true
-		title: Non-markdown Links
-        description: Links that appear outside of notes
+		title: 笔记外的链接
+        description: 出现在笔记内容之外的链接。
     -
         id: link-unresolved-color
         type: variable-themed-color
-        title: Non-markdown Links Color
+        title: 笔记外的链接颜色
         format: hsl
         opacity: true
         default-light: 'hsla(4, 59%, 64%, 1)'
@@ -1635,7 +1635,7 @@ settings:
     -
         id: link-unresolved-color
         type: variable-themed-color
-        title: Non-markdown Links Color when Hovered
+        title: 笔记外的链接悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(4, 72%, 55%, 1)'
@@ -1645,11 +1645,11 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Unresolved Links
+		title: 未创建笔记的链接
     -
         id: link-unresolved-color
         type: variable-themed-color
-        title: Unresolved Links Color
+        title: 未创建笔记的链接颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1657,7 +1657,7 @@ settings:
     -
         id: link-unresolved-color
         type: variable-themed-color
-        title: Unresolved Links Color when Hovered
+        title: 未创建笔记的链接悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 37%, 70%, 1)'
@@ -1665,19 +1665,19 @@ settings:
     -
         id: link-unresolved-opacity
         type: variable-number
-        title: Unresolved Link Opacity
-        description: Choose a number between 0 to 1.
+        title: 未创建笔记的链接不透明度
+        description: 请输入 0 到 1 之间的数值。
         default: 1
 	-
 		id: nf_link
 		type: heading
 		level: 3
 		collapsed: true
-		title: Resolved Links
+		title: 已有笔记的链接
     -
         id: link-color
         type: variable-themed-color
-        title: Resolved Links Color
+        title: 已有笔记的链接颜色
         format: hsl
         opacity: true
         default-light: 'hsla(40, 79%, 47%, 1)'
@@ -1685,7 +1685,7 @@ settings:
     -
         id: link-color
         type: variable-themed-color
-        title: Resolved Links Color when Hovered
+        title: 已有笔记的链接悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(43, 83%, 57%, 1)'
@@ -1695,11 +1695,11 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: External Links
+		title: 外部链接
     -
         id: link-external-color
         type: variable-themed-color
-        title: External Links Color
+        title: 外部链接颜色
         format: hsl
         opacity: true
         default-light: 'hsla(149, 50%, 39%, 1)'
@@ -1707,7 +1707,7 @@ settings:
     -
         id: link-external-color
         type: variable-themed-color
-        title: External Links Color when Hovered
+        title: 外部链接悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(148, 48%, 47%, 1)'
@@ -1717,16 +1717,16 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Blockquotes
+		title: 引用块
     -
         id: blockquote-border-thickness
         type: variable-text
-        title: Blockquote Border Thickness
+        title: 引用块边框宽度
         default: 2px
     -
         id: blockquote-border-color
         type: variable-themed-color
-        title: Blockquote Border Color
+        title: 引用块边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -1734,7 +1734,7 @@ settings:
     -
         id: blockquote-background-color
         type: variable-themed-color
-        title: Blockquote Background Color
+        title: 引用块背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(36, 38%, 98%, 1)'
@@ -1744,32 +1744,32 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: List
+		title: 列表
     -
         id: indentation-guide-reading-indent
         type: variable-number
         format: em
-        title: Reading Mode – Indentation Line Guide Indent
-        description: Might require some customization if you change fonts. Unit is in em.
+        title: 阅读模式：缩进参考线偏移
+        description: 更换字体后可能需要重新调整，单位为 em。
         default: -0.85
     -
         id: indentation-guide-editing-indent
         type: variable-number
         format: em
-        title: Live Preview Mode – Indentation Line Guide Indent
-        description: Might require some customization if you change fonts. Unit is in em.
+        title: 实时预览模式：缩进参考线偏移
+        description: 更换字体后可能需要重新调整，单位为 em。
         default: 0.975
     -
         id: indentation-guide-source-indent
         type: variable-number
         format: em
-        title: Source Mode – Indentation Line Guide Indent
-        description: Might require some customization if you change fonts. Unit is in em.
+        title: 源码模式：缩进参考线偏移
+        description: 更换字体后可能需要重新调整，单位为 em。
         default: 0.25
     -
         id: list-marker-color
         type: variable-themed-color
-        title: List Marker Color
+        title: 列表标记颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1777,7 +1777,7 @@ settings:
     -
         id: list-marker-color-hover
         type: variable-themed-color
-        title: List Marker Color when Hovered
+        title: 列表标记悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(35, 28%, 40%, 1)'
@@ -1785,7 +1785,7 @@ settings:
     -
         id: list-marker-color
         type: variable-themed-color
-        title: List Marker Color when Collapsed
+        title: 列表标记折叠时的颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 23%, 50%, 1)'
@@ -1795,11 +1795,11 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Checkbox
+		title: 复选框
     -
         id: checklist-bg
         type: variable-themed-color
-        title: Unchecked Background Color
+        title: 未勾选时的背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(36, 38%, 98%, 1)'
@@ -1807,7 +1807,7 @@ settings:
     -
         id: checkbox-color
         type: variable-themed-color
-        title: Checked Background Color
+        title: 已勾选时的背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(149, 50%, 39%, 1)'
@@ -1815,7 +1815,7 @@ settings:
     -
         id: checkbox-color-hover
         type: variable-themed-color
-        title: Checked Background Color when Hovered
+        title: 已勾选时的悬停背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(148, 48%, 47%, 1)'
@@ -1823,7 +1823,7 @@ settings:
     -
         id: checkbox-marker-color
         type: variable-themed-color
-        title: Checked Item's Check Icon Color
+        title: 已勾选时的勾选图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 0%, 100%, 1)'
@@ -1831,7 +1831,7 @@ settings:
     -
         id: checklist-done-color
         type: variable-themed-color
-        title: Checked Text Color
+        title: 已完成任务文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1839,25 +1839,25 @@ settings:
     -
         id: checklist-done-decoration
         type: variable-text
-        title: Checked Text Decoration (causes Strikethrough)
-        description: Text decoration for checked items default at "line-through". If you would like to remove the strikethrough for checked items, put "none".
+        title: 已完成任务文字装饰（删除线）
+        description: 已完成任务的文字装饰默认为 line-through（删除线）。如需移除删除线，请填 none。
         default: 'line-through'
     -
         id: checkbox-radius
         type: variable-text
-        title: Checkbox Border Radius
-        description: Changes the roundness of the checkbox. You may use other units such as %, em, or rem. If you want circular checkboxes, put "100%". If you want squircle checkboxes, put "5px" or "6px". If you want square checkboxes, put "2px" or "0".
+        title: 复选框圆角
+        description: 调整复选框圆角，可使用 %、em 或 rem 等单位。圆形填 100%，圆角方形填 5px 或 6px，直角或小圆角方形填 0 或 2px。
         default: '4px'
 	-
 		id: nf-checkbox-icons
 		type: heading
 		level: 2
 		collapsed: true
-		title: Checkbox Icons
+		title: 任务状态图标
     -
         id: inprogress-chbx-color
         type: variable-themed-color
-        title: In Progress [/] Color
+        title: 进行中 [/] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 82%, 57%, 1)'
@@ -1865,7 +1865,7 @@ settings:
     -
         id: inprogress-chbx-color-hover
         type: variable-themed-color
-        title: In Progress [/] Color when Hovered
+        title: 进行中 [/] 悬停颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 82%, 64%, 1)'
@@ -1873,7 +1873,7 @@ settings:
     -
         id: resched-chbx-color
         type: variable-themed-color
-        title: Reschedule [>] Color
+        title: 重新安排 [>] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(178, 18%, 59%, 1)'
@@ -1881,7 +1881,7 @@ settings:
     -
         id: sched-chbx-color
         type: variable-themed-color
-        title: Schedule or Date [<] Color
+        title: 计划或日期 [<] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(32, 10%, 68%, 1)'
@@ -1889,7 +1889,7 @@ settings:
     -
         id: important-chbx-color
         type: variable-themed-color
-        title: Important [!] Color
+        title: 重要 [!] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(17, 83%, 52%, 1)'
@@ -1897,7 +1897,7 @@ settings:
     -
         id: important-chbx-icon-color
         type: variable-themed-color
-        title: Important [!] Inner Icon Color
+        title: 重要 [!] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -1905,13 +1905,13 @@ settings:
     -
         id: important-chbx-radius
         type: variable-text
-        title: Important [!] Border Radius
-        description: Changes the roundness of the checkbox. You may use other units such as px, em, or rem.
+        title: 重要 [!] 圆角
+        description: 调整复选框圆角，可使用 px、em 或 rem 等单位。
         default: '100%'
     -
         id: cancelled-chbx-color
         type: variable-themed-color
-        title: Cancelled [-] Color
+        title: 已取消 [-] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(32, 10%, 68%, 1)'
@@ -1919,7 +1919,7 @@ settings:
     -
         id: cancelled-chbx-text-color
         type: variable-themed-color
-        title: Cancelled [-] Text Color
+        title: 已取消 [-] 文字颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -1927,13 +1927,13 @@ settings:
     -
         id: cancelled-chbx-text-decoration
         type: variable-text
-        title: Cancelled [-] Text Decoration (causes Strikethrough)
-        description: Text decoration for items marked [-] default at "line-through". If you would like to remove the strikethrough, put "none".
+        title: 已取消 [-] 文字装饰（删除线）
+        description: 标记为 [-] 的任务默认使用 line-through（删除线）。如需移除删除线，请填 none。
         default: 'line-through'
     -
         id: question-chbx-color
         type: variable-themed-color
-        title: Question [?] Color
+        title: 疑问 [?] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(281, 33%, 54%, 1)'
@@ -1941,7 +1941,7 @@ settings:
     -
         id: question-chbx-icon-color
         type: variable-themed-color
-        title: Question [?] Inner Icon Color
+        title: 疑问 [?] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -1949,7 +1949,7 @@ settings:
     -
         id: star-chbx-color
         type: variable-themed-color
-        title: Star [*] Color
+        title: 星标 [*] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(40, 93%, 51%, 1)'
@@ -1957,7 +1957,7 @@ settings:
     -
         id: star-chbx-icon-color
         type: variable-themed-color
-        title: Star [*] Inner Icon Color
+        title: 星标 [*] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -1965,7 +1965,7 @@ settings:
     -
         id: note-chbx-color
         type: variable-themed-color
-        title: Note [n] Color
+        title: 笔记 [n] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(8, 51%, 53%, 1)'
@@ -1973,7 +1973,7 @@ settings:
     -
         id: location-chbx-color
         type: variable-themed-color
-        title: Location [l] Color
+        title: 位置 [l] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(0, 56%, 48%, 1)'
@@ -1981,7 +1981,7 @@ settings:
     -
         id: info-chbx-color
         type: variable-themed-color
-        title: Info [i] Color
+        title: 信息 [i] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(178, 29%, 45%, 1)'
@@ -1989,7 +1989,7 @@ settings:
     -
         id: info-chbx-icon-color
         type: variable-themed-color
-        title: Info [i] Inner Icon Color
+        title: 信息 [i] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -1997,7 +1997,7 @@ settings:
     -
         id: amount-chbx-color
         type: variable-themed-color
-        title: Amount [S] Color
+        title: 金额 [S] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(152, 42%, 41%, 1)'
@@ -2005,7 +2005,7 @@ settings:
     -
         id: amount-chbx-icon-color
         type: variable-themed-color
-        title: Amount [S] Inner Icon Color
+        title: 金额 [S] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -2013,13 +2013,13 @@ settings:
     -
         id: amount-chbx-radius
         type: variable-text
-        title: Amount [S] Border Radius
-        description: Changes the roundness of the checkbox. You may use other units such as px, em, or rem.
+        title: 金额 [S] 圆角
+        description: 调整复选框圆角，可使用 px、em 或 rem 等单位。
         default: '100%'
     -
         id: quote-chbx-color
         type: variable-themed-color
-        title: Quote ["] Color
+        title: 引用 ["] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(206, 47%, 48%, 1)'
@@ -2027,7 +2027,7 @@ settings:
     -
         id: quote-chbx-icon-color
         type: variable-themed-color
-        title: Quote ["] Inner Icon Color
+        title: 引用 ["] 内部图标颜色
         format: hsl
         opacity: true
         default-light: 'hsla(180, 0%, 100%, 1)'
@@ -2035,7 +2035,7 @@ settings:
     -
         id: idea-chbx-color
         type: variable-themed-color
-        title: Idea [I] Color
+        title: 灵感 [I] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(30, 72%, 62%, 1)'
@@ -2043,7 +2043,7 @@ settings:
     -
         id: pro-chbx-color
         type: variable-themed-color
-        title: Pro [p] Color
+        title: 优点 [p] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(149, 34%, 44%, 1)'
@@ -2051,7 +2051,7 @@ settings:
     -
         id: con-chbx-color
         type: variable-themed-color
-        title: Con [c] Color
+        title: 缺点 [c] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(12, 62%, 45%, 1)'
@@ -2059,7 +2059,7 @@ settings:
     -
         id: bookmark-chbx-color
         type: variable-themed-color
-        title: Bookmark [b] Color
+        title: 书签 [b] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(21, 81%, 59%, 1)'
@@ -2067,7 +2067,7 @@ settings:
     -
         id: up-chbx-color
         type: variable-themed-color
-        title: Up Trend Line [u] Color
+        title: 上升趋势 [u] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(146, 37%, 49%, 1)'
@@ -2075,7 +2075,7 @@ settings:
     -
         id: down-chbx-color
         type: variable-themed-color
-        title: Down Trend Line [d] Color
+        title: 下降趋势 [d] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(4, 56%, 48%, 1)'
@@ -2083,7 +2083,7 @@ settings:
     -
         id: law-chbx-color
         type: variable-themed-color
-        title: Rule or Law [r] Color
+        title: 规则或法律 [r] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 34%, 52%, 1)'
@@ -2091,7 +2091,7 @@ settings:
     -
         id: language-chbx-color
         type: variable-themed-color
-        title: Language or Translate [L] Color
+        title: 语言或翻译 [L] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(7, 59%, 64%, 1)'
@@ -2099,7 +2099,7 @@ settings:
     -
         id: clock-chbx-color
         type: variable-themed-color
-        title: Time or Clock [t] Color
+        title: 时间或时钟 [t] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(210, 39%, 49%, 1)'
@@ -2107,7 +2107,7 @@ settings:
     -
         id: telephone-chbx-color
         type: variable-themed-color
-        title: Telephone [T] Color
+        title: 电话 [T] 颜色
         format: hsl
         opacity: true
         default-light: 'hsla(148, 47%, 47%, 1)'
@@ -2117,34 +2117,34 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Media
+		title: 媒体
     -
         id: embed-media-border-radius
         type: variable-text
-        title: Media Border Radius
-        description: Set border radius size for media (images, audio, video)
+        title: 媒体圆角
+        description: 设置媒体（图片、音频、视频）的圆角半径。
         default: 8px
 	-
 		id: nf_note-embed
 		type: heading
 		level: 2
 		collapsed: true
-		title: Note Embed
+		title: 嵌入笔记
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🎨 Visit the [Note Embed Presets](https://primary-theme.github.io/presets/note-embed) in the Full Guide and check if you have any preferred ready-to-go style presets there, or if you want some inspiration on styling your embeds.
+        description: 🎨 查看完整指南中的[嵌入笔记预设](https://primary-theme.github.io/presets/note-embed)，选择现成样式或获取自定义样式的灵感。
     -
         id: embed-max-height
         type: variable-text
-        title: Note Embed Max Height
-        description: If you embed very long notes, you can change the max height so that each embed is scrollable. You can also set this by line-height using the unit rlh, or other CSS supported units. Recommended values are 20rlh and 40rlh.
+        title: 嵌入笔记最大高度
+        description: 嵌入较长笔记时，可限制最大高度，让嵌入区域能够滚动。可使用按行高计算的 rlh 或其他 CSS 单位，推荐 20rlh 或 40rlh。
         default: 4000px
     -
         id: embed-background
         type: variable-themed-color
-        title: Note Embed Background Color
+        title: 嵌入笔记背景颜色
         format: hsl
         opacity: true
         default-light: 'hsla(39, 39%, 94%, 1)'
@@ -2154,39 +2154,39 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Note Embed Title
+		title: 嵌入笔记标题
     -
         id: embed-hide-title
         type: class-toggle
-        title: Hide Note Embed Title
-        description: Hide the note's title when embedding notes.
+        title: 隐藏嵌入笔记标题
+        description: 嵌入笔记时隐藏笔记标题。
     -
         id: embed-title-font-size
         type: variable-text
-        title: Note Embed Title Font Size
-        description: You can use any CSS supported units. By default takes in the editor's font size based in the Obsidian Settings.
+        title: 嵌入笔记标题字号
+        description: 可使用任意 CSS 支持的单位。默认使用 Obsidian 设置中的编辑器字号。
         default: 12px
     -
         id: embed-title-font-weight
         type: variable-number
-        title: Note Embed Title Font Weight
+        title: 嵌入笔记标题字重
         default: 500
     -
         id: embed-title-text-transform
         type: variable-text
-        title: Note Embed Title Text Transform
-        description: Based on CSS. If you want the note embed title to be in all uppercase, put uppercase. Other options include capitalize and lowercase.
+        title: 嵌入笔记标题字母大小写
+        description: 使用 CSS 属性值。全部大写填 uppercase，单词首字母大写填 capitalize，全部小写填 lowercase。
         default: none
     -
         id: embed-title-letter-spacing
         type: variable-text
-        title: Note Embed Title Letter Spacing
-        description: You can use numbers and CSS units.
+        title: 嵌入笔记标题字间距
+        description: 可使用数值和 CSS 单位。
         default: normal
     -
         id: embed-title-color
         type: variable-themed-color
-        title: Note Embed Title Color
+        title: 嵌入笔记标题颜色
         format: hsl
         opacity: true
         default-light: 'hsla(31, 23%, 50%, 1)'
@@ -2194,19 +2194,19 @@ settings:
     -
         id: embed-title-border-width
         type: variable-text
-        title: Note Embed Title Bottom Border Width
-        description: If you'd like to remove the border, set this to 0px.
+        title: 嵌入笔记标题下边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: embed-title-border-style
         type: variable-text
-        title: Note Embed Title Bottom Border Style
-        description: Other options include dashed, dotted, and double.
+        title: 嵌入笔记标题下边框样式
+        description: 其他可选值包括 dashed（虚线）、dotted（点线）和 double（双线）。
         default: solid
     -
         id: embed-title-border-color
         type: variable-themed-color
-        title: Note Embed Title Border Color
+        title: 嵌入笔记标题边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2214,42 +2214,42 @@ settings:
     -
         id: embed-title-margin-bottom
         type: variable-text
-        title: Note Embed Title Bottom Margin Size
+        title: 嵌入笔记标题下外边距
         default: 8px
 	-
 		id: nf_note-embed-border
 		type: heading
 		level: 3
 		collapsed: true
-		title: Note Embed Border
+		title: 嵌入笔记边框
     -
         id: embed-border-radius
         type: variable-text
-        title: Note Embed Border Radius
-        description: You can also have different radiuses per side. Just write them in the CSS format of top left, top right, bottom right, bottom left. i.e. 2px, 8px, 12px, 0px.
+        title: 嵌入笔记圆角
+        description: 可为各角设置不同半径，依次对应左上、右上、右下、左下，例如 2px 8px 12px 0px。
         default: 12px
 	-
 		id: nf_note-embed-border
 		type: heading
 		level: 4
 		collapsed: true
-		title: Note Embed Top Border
+		title: 嵌入笔记上边框
     -
         id: embed-border-top-width
         type: variable-text
-        title: Note Embed Top Border Width
-        description: If you'd like to remove the border, set this to 0px.
+        title: 嵌入笔记上边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: embed-border-top-style
         type: variable-text
-        title: Note Embed Top Border Style
-        description: Other options include dashed, dotted, and double.
+        title: 嵌入笔记上边框样式
+        description: 其他可选值包括 dashed（虚线）、dotted（点线）和 double（双线）。
         default: solid
     -
         id: embed-border-top-color
         type: variable-themed-color
-        title: Note Embed Top Border Color
+        title: 嵌入笔记上边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2259,23 +2259,23 @@ settings:
 		type: heading
 		level: 4
 		collapsed: true
-		title: Note Embed Right Border
+		title: 嵌入笔记右边框
     -
         id: embed-border-end-width
         type: variable-text
-        title: Note Embed Right Border Width
-        description: If you'd like to remove the border, set this to 0px.
+        title: 嵌入笔记右边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: embed-border-end-style
         type: variable-text
-        title: Note Embed Right Border Style
-        description: Other options include dashed, dotted, and double.
+        title: 嵌入笔记右边框样式
+        description: 其他可选值包括 dashed（虚线）、dotted（点线）和 double（双线）。
         default: solid
     -
         id: embed-border-end-color
         type: variable-themed-color
-        title: Note Embed Right Border Color
+        title: 嵌入笔记右边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2285,23 +2285,23 @@ settings:
 		type: heading
 		level: 4
 		collapsed: true
-		title: Note Embed Bottom Border
+		title: 嵌入笔记下边框
     -
         id: embed-border-bottom-width
         type: variable-text
-        title: Note Embed Bottom Border Width
-        description: If you'd like to remove the border, set this to 0px.
+        title: 嵌入笔记下边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: embed-border-bottom-style
         type: variable-text
-        title: Note Embed Bottom Border Style
-        description: Other options include dashed, dotted, and double.
+        title: 嵌入笔记下边框样式
+        description: 其他可选值包括 dashed（虚线）、dotted（点线）和 double（双线）。
         default: solid
     -
         id: embed-border-bottom-color
         type: variable-themed-color
-        title: Note Embed Bottom Border Color
+        title: 嵌入笔记下边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2311,23 +2311,23 @@ settings:
 		type: heading
 		level: 4
 		collapsed: true
-		title: Note Embed Left Border
+		title: 嵌入笔记左边框
     -
         id: embed-border-start-width
         type: variable-text
-        title: Note Embed Left Border Width
-        description: If you'd like to remove the border, set this to 0px.
+        title: 嵌入笔记左边框宽度
+        description: 设为 0px 可移除边框。
         default: 1px
     -
         id: embed-border-start-style
         type: variable-text
-        title: Note Embed Left Border Style
-        description: Other options include dashed, dotted, and double.
+        title: 嵌入笔记左边框样式
+        description: 其他可选值包括 dashed（虚线）、dotted（点线）和 double（双线）。
         default: solid
     -
         id: embed-border-start-color
         type: variable-themed-color
-        title: Note Embed Left Border Color
+        title: 嵌入笔记左边框颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2337,11 +2337,11 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: Canvas
+		title: 白板
     -
         id: canvas-dot-pattern
         type: variable-themed-color
-        title: Canvas Dot Pattern Color
+        title: 白板点阵颜色
         format: hsl
         opacity: true
         default-light: 'hsla(37, 38%, 83%, 1)'
@@ -2349,7 +2349,7 @@ settings:
     -
         id: canvas-card-label-color
         type: variable-themed-color
-        title: Canvas Card Label Color
+        title: 白板卡片标签颜色
         format: hsl
         opacity: true
         default-light: 'hsla(34, 29%, 60%, 1)'
@@ -2357,7 +2357,7 @@ settings:
     -
         id: canvas-color
         type: variable-themed-color
-        title: Canvas Color 1
+        title: 白板颜色 1
         format: rgb-values
         opacity: false
         default-light: 'rgb(182, 175, 166)'
@@ -2365,7 +2365,7 @@ settings:
     -
         id: canvas-color-1
         type: variable-themed-color
-        title: Canvas Color 2
+        title: 白板颜色 2
         format: rgb-values
         opacity: false
         default-light: 'rgb(223, 90, 90)'
@@ -2373,7 +2373,7 @@ settings:
     -
         id: canvas-color-2
         type: variable-themed-color
-        title: Canvas Color 3
+        title: 白板颜色 3
         format: rgb-values
         opacity: false
         default-light: 'rgb(231, 130, 63)'
@@ -2381,7 +2381,7 @@ settings:
     -
         id: canvas-color-3
         type: variable-themed-color
-        title: Canvas Color 4
+        title: 白板颜色 4
         format: rgb-values
         opacity: false
         default-light: 'rgb(248, 197, 46)'
@@ -2389,7 +2389,7 @@ settings:
     -
         id: canvas-color-4
         type: variable-themed-color
-        title: Canvas Color 5
+        title: 白板颜色 5
         format: rgb-values
         opacity: false
         default-light: 'rgb(87, 185, 132)'
@@ -2397,7 +2397,7 @@ settings:
     -
         id: canvas-color-5
         type: variable-themed-color
-        title: Canvas Color 6
+        title: 白板颜色 6
         format: rgb-values
         opacity: false
         default-light: 'rgb(99, 164, 198)'
@@ -2405,7 +2405,7 @@ settings:
     -
         id: canvas-color-6
         type: variable-themed-color
-        title: Canvas Color 7
+        title: 白板颜色 7
         format: rgb-values
         opacity: false
         default-light: 'rgb(135, 106, 193)'
@@ -2415,64 +2415,64 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: File Explorer & Bookmarks
+		title: 文件列表与书签
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🎨 Out of the box, the toggles below affect both file explorer and bookmark folders. If you'd like them to be different colors, head down over to the **Bookmarks** section, turn on `Custom Bookmarks Folders` and set your desired colors.
+        description: 🎨 以下开关默认同时影响文件列表和书签文件夹。如需分别设置颜色，请前往「书签文件夹」分组，启用「自定义书签文件夹颜色」，然后设置所需颜色。
     -
         id: alt-folder-icons
         type: class-toggle
-        title: Toggle using Folders as Collapse Indicators
-        description: Use folders as collapse indicators instead of chevrons.
+        title: 使用文件夹图标作为折叠指示器
+        description: 使用文件夹图标替代箭头作为折叠指示器。
     -
         id: colorful-folders_text
         type: class-toggle
-        title: Toggle Colored Folder Text
-        description: Adds colors to the name text of the folder. When hovered, folder background is colored.
+        title: 启用彩色文件夹名称
+        description: 为文件夹名称添加颜色，鼠标悬停时背景也会着色。
     -
         id: colorful-folders_collapse-indicator
         type: class-toggle
-        title: Toggle Colored Folder Collapse Indicators
-        description: Adds color to the collapse indicators of the folders.
+        title: 启用彩色文件夹折叠指示器
+        description: 为文件夹的折叠指示器添加颜色。
     -
         id: colorful-folders_background
         type: class-toggle
-        title: Toggle Colored Folder Backgrounds
-        description: Adds background color to folders.
+        title: 启用彩色文件夹背景
+        description: 为文件夹添加背景颜色。
     -
         id: colorful-folders_indentation-guide
         type: class-toggle
-        title: Toggle Colored Folder Colored Indentation Guide
-        description: Colors folder's indentation guide based on parent folder's color.
+        title: 启用彩色文件夹缩进参考线
+        description: 根据父文件夹的颜色为缩进参考线着色。
     -
         id: colorful-folders_inherit-color
         type: class-toggle
-        title: Toggle to Inherit Parent Folder Colors
-        description: The color cycles through up to 12 colors for both top level folders and subfolders by default. If you would like subfolders to be colored based on their top level folder colors, toggle this on.
+        title: 继承顶层文件夹颜色
+        description: 默认情况下，顶层文件夹和子文件夹均循环使用最多 12 种颜色。启用后，子文件夹继承所属顶层文件夹的颜色。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🔄 Folder Colors are setup to cycle through up to 12 colors. At default, it cycles through only 6 colors that I've set up to repeat. Feel free to color them as you wish.
+        description: 🔄 文件夹配色最多支持 12 种颜色循环。默认使用 6 种颜色重复排列，可根据喜好更改。
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🎨 The collapse indicator and indentation guide colors take in the color of the text color. If you don't want the hassle of changing these two other nuances, you can just change the text color. <br><br> Same goes for background color when hovered, you can focus on just changing the background color and leave the hovered color and it will adjust accordingly.
+        description: 🎨 折叠指示器和缩进参考线的颜色跟随文字颜色。如果不想分别调整，只需更改文字颜色。<br><br> 悬停背景也会跟随背景颜色调整，可只更改背景颜色。
 	-
 		id: file-explorer_folder
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 1
+		title: 文件夹配色 1
     -
         id: nav-folder-1-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Text Color
+        title: 文件夹配色 1：文字颜色
         default-light: 'hsla(4, 56%, 48%, 1)'
         default-dark: 'hsla(4, 88%, 61%, 1)'
     -
@@ -2480,7 +2480,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Collapse Indicator Color
+        title: 文件夹配色 1：折叠指示器颜色
         default-light: 'hsla(4, 56%, 48%, 0.5)'
         default-dark: 'hsla(4, 88%, 61%, 0.5)'
     -
@@ -2488,7 +2488,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Background Color
+        title: 文件夹配色 1：背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.12)'
         default-dark: 'hsla(350, 84%, 63%, 0.12)'
     -
@@ -2496,7 +2496,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Background Color when Hovered
+        title: 文件夹配色 1：悬停背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.084)'
         default-dark: 'hsla(350, 84%, 63%, 0.084)'
     -
@@ -2504,7 +2504,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Indentation Guide Color
+        title: 文件夹配色 1：缩进参考线颜色
         default-light: 'hsla(4, 56%, 48%, 0.25)'
         default-dark: 'hsla(4, 88%, 61%, 0.25)'
 	-
@@ -2512,13 +2512,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 2
+		title: 文件夹配色 2
     -
         id: nav-folder-2-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Text Color
+        title: 文件夹配色 2：文字颜色
         default-light: 'hsla(18, 69%, 50%, 1)'
         default-dark: 'hsla(24, 84%, 50%, 1)'
     -
@@ -2526,7 +2526,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Collapse Indicator Color
+        title: 文件夹配色 2：折叠指示器颜色
         default-light: 'hsla(18, 69%, 50%, 0.5)'
         default-dark: 'hsla(24, 84%, 50%, 0.5)'
     -
@@ -2534,7 +2534,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Background Color
+        title: 文件夹配色 2：背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.12)'
         default-dark: 'hsla(27, 100%, 50%, 0.12)'
     -
@@ -2542,7 +2542,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Background Color when Hovered
+        title: 文件夹配色 2：悬停背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.084)'
         default-dark: 'hsla(27, 100%, 50%, 0.084)'
     -
@@ -2550,7 +2550,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Indentation Guide Color
+        title: 文件夹配色 2：缩进参考线颜色
         default-light: 'hsla(18, 69%, 50%, 0.25)'
         default-dark: 'hsla(24, 84%, 50%, 0.25)'
 	-
@@ -2558,13 +2558,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 3
+		title: 文件夹配色 3
     -
         id: nav-folder-3-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Text Color
+        title: 文件夹配色 3：文字颜色
         default-light: 'hsla(40, 98%, 36%, 1)'
         default-dark: 'hsla(42, 79%, 51%, 1)'
     -
@@ -2572,7 +2572,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Collapse Indicator Color
+        title: 文件夹配色 3：折叠指示器颜色
         default-light: 'hsla(40, 98%, 36%, 0.5)'
         default-dark: 'hsla(42, 79%, 51%, 0.5)'
     -
@@ -2580,7 +2580,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Background Color
+        title: 文件夹配色 3：背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.12)'
         default-dark: 'hsla(44, 100%, 50%, 0.12)'
     -
@@ -2588,7 +2588,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Background Color when Hovered
+        title: 文件夹配色 3：悬停背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.084)'
         default-dark: 'hsla(44, 100%, 50%, 0.084)'
     -
@@ -2596,7 +2596,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Indentation Guide Color
+        title: 文件夹配色 3：缩进参考线颜色
         default-light: 'hsla(40, 98%, 36%, 0.25)'
         default-dark: 'hsla(42, 79%, 51%, 0.25)'
 	-
@@ -2604,13 +2604,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 4
+		title: 文件夹配色 4
     -
         id: nav-folder-4-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Text Color
+        title: 文件夹配色 4：文字颜色
         default-light: 'hsla(153, 65%, 29%, 1)'
         default-dark: 'hsla(154, 57%, 42%, 1)'
     -
@@ -2618,7 +2618,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Collapse Indicator Color
+        title: 文件夹配色 4：折叠指示器颜色
         default-light: 'hsla(153, 65%, 29%, 0.5)'
         default-dark: 'hsla(154, 57%, 42%, 0.5)'
     -
@@ -2626,7 +2626,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Background Color
+        title: 文件夹配色 4：背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.12)'
         default-dark: 'hsla(74, 69%, 44%, 0.12)'
     -
@@ -2634,7 +2634,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Background Color when Hovered
+        title: 文件夹配色 4：悬停背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.084)'
         default-dark: 'hsla(74, 69%, 44%, 0.084)'
     -
@@ -2642,7 +2642,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Indentation Guide Color
+        title: 文件夹配色 4：缩进参考线颜色
         default-light: 'hsla(153, 65%, 29%, 0.25)'
         default-dark: 'hsla(154, 57%, 42%, 0.25)'
 	-
@@ -2650,13 +2650,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 5
+		title: 文件夹配色 5
     -
         id: nav-folder-5-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Text Color
+        title: 文件夹配色 5：文字颜色
         default-light: 'hsla(200, 64%, 37%, 1)'
         default-dark: 'hsla(194, 59%, 56%, 1)'
     -
@@ -2664,7 +2664,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Collapse Indicator Color
+        title: 文件夹配色 5：折叠指示器颜色
         default-light: 'hsla(200, 64%, 37%, 0.5)'
         default-dark: 'hsla(194, 59%, 56%, 0.5)'
     -
@@ -2672,7 +2672,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Background Color
+        title: 文件夹配色 5：背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.12)'
         default-dark: 'hsla(186, 64%, 46%, 0.12)'
     -
@@ -2680,7 +2680,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Background Color when Hovered
+        title: 文件夹配色 5：悬停背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.084)'
         default-dark: 'hsla(186, 64%, 46%, 0.084)'
     -
@@ -2688,7 +2688,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Indentation Guide Color
+        title: 文件夹配色 5：缩进参考线颜色
         default-light: 'hsla(200, 64%, 37%, 0.25)'
         default-dark: 'hsla(194, 59%, 56%, 0.25)'
 	-
@@ -2696,13 +2696,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 6
+		title: 文件夹配色 6
     -
         id: nav-folder-6-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Text Color
+        title: 文件夹配色 6：文字颜色
         default-light: 'hsla(275, 37%, 43%, 1)'
         default-dark: 'hsla(242, 52%, 69%, 1)'
     -
@@ -2710,7 +2710,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Collapse Indicator Color
+        title: 文件夹配色 6：折叠指示器颜色
         default-light: 'hsla(275, 37%, 43%, 0.5)'
         default-dark: 'hsla(242, 52%, 69%, 0.5)'
     -
@@ -2718,7 +2718,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Background Color
+        title: 文件夹配色 6：背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.12)'
         default-dark: 'hsla(236, 100%, 72%, 0.12)'
     -
@@ -2726,7 +2726,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Background Color when Hovered
+        title: 文件夹配色 6：悬停背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.084)'
         default-dark: 'hsla(236, 100%, 72%, 0.084)'
     -
@@ -2734,7 +2734,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Indentation Guide Color
+        title: 文件夹配色 6：缩进参考线颜色
         default-light: 'hsla(275, 37%, 43%, 0.25)'
         default-dark: 'hsla(242, 52%, 69%, 0.25)'
 	-
@@ -2742,13 +2742,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 7
+		title: 文件夹配色 7
     -
         id: nav-folder-7-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Text Color
+        title: 文件夹配色 7：文字颜色
         default-light: 'hsla(4, 56%, 48%, 1)'
         default-dark: 'hsla(4, 88%, 61%, 1)'
     -
@@ -2756,7 +2756,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Collapse Indicator Color
+        title: 文件夹配色 7：折叠指示器颜色
         default-light: 'hsla(4, 56%, 48%, 0.5)'
         default-dark: 'hsla(4, 88%, 61%, 0.5)'
     -
@@ -2764,7 +2764,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Background Color
+        title: 文件夹配色 7：背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.12)'
         default-dark: 'hsla(350, 84%, 63%, 0.12)'
     -
@@ -2772,7 +2772,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Background Color when Hovered
+        title: 文件夹配色 7：悬停背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.084)'
         default-dark: 'hsla(350, 84%, 63%, 0.084)'
     -
@@ -2780,7 +2780,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Indentation Guide Color
+        title: 文件夹配色 7：缩进参考线颜色
         default-light: 'hsla(4, 56%, 48%, 0.25)'
         default-dark: 'hsla(4, 88%, 61%, 0.25)'
 	-
@@ -2788,13 +2788,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 8
+		title: 文件夹配色 8
     -
         id: nav-folder-8-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Text Color
+        title: 文件夹配色 8：文字颜色
         default-light: 'hsla(18, 69%, 50%, 1)'
         default-dark: 'hsla(24, 84%, 50%, 1)'
     -
@@ -2802,7 +2802,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Collapse Indicator Color
+        title: 文件夹配色 8：折叠指示器颜色
         default-light: 'hsla(18, 69%, 50%, 0.5)'
         default-dark: 'hsla(24, 84%, 50%, 0.5)'
     -
@@ -2810,7 +2810,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Background Color
+        title: 文件夹配色 8：背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.12)'
         default-dark: 'hsla(27, 100%, 50%, 0.12)'
     -
@@ -2818,7 +2818,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Background Color when Hovered
+        title: 文件夹配色 8：悬停背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.084)'
         default-dark: 'hsla(27, 100%, 50%, 0.084)'
     -
@@ -2826,7 +2826,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Indentation Guide Color
+        title: 文件夹配色 8：缩进参考线颜色
         default-light: 'hsla(18, 69%, 50%, 0.25)'
         default-dark: 'hsla(24, 84%, 50%, 0.25)'
 	-
@@ -2834,13 +2834,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 9
+		title: 文件夹配色 9
     -
         id: nav-folder-9-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Text Color
+        title: 文件夹配色 9：文字颜色
         default-light: 'hsla(40, 98%, 36%, 1)'
         default-dark: 'hsla(42, 79%, 51%, 1)'
     -
@@ -2848,7 +2848,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Collapse Indicator Color
+        title: 文件夹配色 9：折叠指示器颜色
         default-light: 'hsla(40, 98%, 36%, 0.5)'
         default-dark: 'hsla(42, 79%, 51%, 0.5)'
     -
@@ -2856,7 +2856,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Background Color
+        title: 文件夹配色 9：背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.12)'
         default-dark: 'hsla(44, 100%, 50%, 0.12)'
     -
@@ -2864,7 +2864,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Background Color when Hovered
+        title: 文件夹配色 9：悬停背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.084)'
         default-dark: 'hsla(44, 100%, 50%, 0.084)'
     -
@@ -2872,7 +2872,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Indentation Guide Color
+        title: 文件夹配色 9：缩进参考线颜色
         default-light: 'hsla(40, 98%, 36%, 0.25)'
         default-dark: 'hsla(42, 79%, 51%, 0.25)'
 	-
@@ -2880,13 +2880,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 10
+		title: 文件夹配色 10
     -
         id: nav-folder-10-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Text Color
+        title: 文件夹配色 10：文字颜色
         default-light: 'hsla(153, 65%, 29%, 1)'
         default-dark: 'hsla(154, 57%, 42%, 1)'
     -
@@ -2894,7 +2894,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Collapse Indicator Color
+        title: 文件夹配色 10：折叠指示器颜色
         default-light: 'hsla(153, 65%, 29%, 0.5)'
         default-dark: 'hsla(154, 57%, 42%, 0.5)'
     -
@@ -2902,7 +2902,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Background Color
+        title: 文件夹配色 10：背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.12)'
         default-dark: 'hsla(74, 69%, 44%, 0.12)'
     -
@@ -2910,7 +2910,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Background Color when Hovered
+        title: 文件夹配色 10：悬停背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.084)'
         default-dark: 'hsla(74, 69%, 44%, 0.084)'
     -
@@ -2918,7 +2918,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Indentation Guide Color
+        title: 文件夹配色 10：缩进参考线颜色
         default-light: 'hsla(153, 65%, 29%, 0.25)'
         default-dark: 'hsla(154, 57%, 42%, 0.25)'
 	-
@@ -2926,13 +2926,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 11
+		title: 文件夹配色 11
     -
         id: nav-folder-11-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Text Color
+        title: 文件夹配色 11：文字颜色
         default-light: 'hsla(200, 64%, 37%, 1)'
         default-dark: 'hsla(194, 59%, 56%, 1)'
     -
@@ -2940,7 +2940,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Collapse Indicator Color
+        title: 文件夹配色 11：折叠指示器颜色
         default-light: 'hsla(200, 64%, 37%, 0.5)'
         default-dark: 'hsla(194, 59%, 56%, 0.5)'
     -
@@ -2948,7 +2948,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Background Color
+        title: 文件夹配色 11：背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.12)'
         default-dark: 'hsla(186, 64%, 46%, 0.12)'
     -
@@ -2956,7 +2956,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Background Color when Hovered
+        title: 文件夹配色 11：悬停背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.084)'
         default-dark: 'hsla(186, 64%, 46%, 0.084)'
     -
@@ -2964,7 +2964,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Indentation Guide Color
+        title: 文件夹配色 11：缩进参考线颜色
         default-light: 'hsla(200, 64%, 37%, 0.25)'
         default-dark: 'hsla(194, 59%, 56%, 0.25)'
 	-
@@ -2972,13 +2972,13 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-		title: Folder 12
+		title: 文件夹配色 12
     -
         id: nav-folder-12-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Text Color
+        title: 文件夹配色 12：文字颜色
         default-light: 'hsla(275, 37%, 43%, 1)'
         default-dark: 'hsla(242, 52%, 69%, 1)'
     -
@@ -2986,7 +2986,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Collapse Indicator Color
+        title: 文件夹配色 12：折叠指示器颜色
         default-light: 'hsla(275, 37%, 43%, 0.5)'
         default-dark: 'hsla(242, 52%, 69%, 0.5)'
     -
@@ -2994,7 +2994,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Background Color
+        title: 文件夹配色 12：背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.12)'
         default-dark: 'hsla(236, 100%, 72%, 0.12)'
     -
@@ -3002,7 +3002,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Background Color when Hovered
+        title: 文件夹配色 12：悬停背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.084)'
         default-dark: 'hsla(236, 100%, 72%, 0.084)'
     -
@@ -3010,7 +3010,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Indentation Guide Color
+        title: 文件夹配色 12：缩进参考线颜色
         default-light: 'hsla(275, 37%, 43%, 0.25)'
         default-dark: 'hsla(242, 52%, 69%, 0.25)'
     -
@@ -3018,24 +3018,24 @@ settings:
         type: heading
         level: 2
         collapsed: true
-        title: Bookmarks Folders
+        title: 书签文件夹
     -
         id: colorful-folders_different-bookmark-colors
         type: class-toggle
-        title: Custom Bookmarks Folders
-        description: By default, File Explorer and Bookmarks share the same colors when the colorful folders toggles are turned on. If you'd like a different color for the Bookmarks folders, toggle this on and set your preferred colors below. Just like File Explorer, customization goes up to 12 folders and cycles through them.
+        title: 自定义书签文件夹颜色
+        description: 启用彩色文件夹后，文件列表与书签默认共享配色。如需为书签文件夹使用不同颜色，请启用此选项并在下方设置。与文件列表一样，最多支持 12 组循环配色。
 	-
 		id: bookmark_folder
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 1
+		title: 文件夹配色 1
     -
         id: bookmark-folder-1-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Text Color
+        title: 文件夹配色 1：文字颜色
         default-light: 'hsla(4, 56%, 48%, 1)'
         default-dark: 'hsla(4, 88%, 61%, 1)'
     -
@@ -3043,7 +3043,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Collapse Indicator Color
+        title: 文件夹配色 1：折叠指示器颜色
         default-light: 'hsla(4, 56%, 48%, 0.5)'
         default-dark: 'hsla(4, 88%, 61%, 0.5)'
     -
@@ -3051,7 +3051,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Background Color
+        title: 文件夹配色 1：背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.12)'
         default-dark: 'hsla(350, 84%, 63%, 0.12)'
     -
@@ -3059,7 +3059,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Background Color when Hovered
+        title: 文件夹配色 1：悬停背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.084)'
         default-dark: 'hsla(350, 84%, 63%, 0.084)'
     -
@@ -3067,7 +3067,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 1 Indentation Guide Color
+        title: 文件夹配色 1：缩进参考线颜色
         default-light: 'hsla(4, 56%, 48%, 0.25)'
         default-dark: 'hsla(4, 88%, 61%, 0.25)'
 	-
@@ -3075,13 +3075,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 2
+		title: 文件夹配色 2
     -
         id: bookmark-folder-2-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Text Color
+        title: 文件夹配色 2：文字颜色
         default-light: 'hsla(18, 69%, 50%, 1)'
         default-dark: 'hsla(24, 84%, 50%, 1)'
     -
@@ -3089,7 +3089,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Collapse Indicator Color
+        title: 文件夹配色 2：折叠指示器颜色
         default-light: 'hsla(18, 69%, 50%, 0.5)'
         default-dark: 'hsla(24, 84%, 50%, 0.5)'
     -
@@ -3097,7 +3097,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Background Color
+        title: 文件夹配色 2：背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.12)'
         default-dark: 'hsla(27, 100%, 50%, 0.12)'
     -
@@ -3105,7 +3105,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Background Color when Hovered
+        title: 文件夹配色 2：悬停背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.084)'
         default-dark: 'hsla(27, 100%, 50%, 0.084)'
     -
@@ -3113,7 +3113,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 2 Indentation Guide Color
+        title: 文件夹配色 2：缩进参考线颜色
         default-light: 'hsla(18, 69%, 50%, 0.25)'
         default-dark: 'hsla(24, 84%, 50%, 0.25)'
 	-
@@ -3121,13 +3121,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 3
+		title: 文件夹配色 3
     -
         id: bookmark-folder-3-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Text Color
+        title: 文件夹配色 3：文字颜色
         default-light: 'hsla(40, 98%, 36%, 1)'
         default-dark: 'hsla(42, 79%, 51%, 1)'
     -
@@ -3135,7 +3135,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Collapse Indicator Color
+        title: 文件夹配色 3：折叠指示器颜色
         default-light: 'hsla(40, 98%, 36%, 0.5)'
         default-dark: 'hsla(42, 79%, 51%, 0.5)'
     -
@@ -3143,7 +3143,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Background Color
+        title: 文件夹配色 3：背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.12)'
         default-dark: 'hsla(44, 100%, 50%, 0.12)'
     -
@@ -3151,7 +3151,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Background Color when Hovered
+        title: 文件夹配色 3：悬停背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.084)'
         default-dark: 'hsla(44, 100%, 50%, 0.084)'
     -
@@ -3159,7 +3159,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 3 Indentation Guide Color
+        title: 文件夹配色 3：缩进参考线颜色
         default-light: 'hsla(40, 98%, 36%, 0.25)'
         default-dark: 'hsla(42, 79%, 51%, 0.25)'
 	-
@@ -3167,13 +3167,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 4
+		title: 文件夹配色 4
     -
         id: bookmark-folder-4-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Text Color
+        title: 文件夹配色 4：文字颜色
         default-light: 'hsla(153, 65%, 29%, 1)'
         default-dark: 'hsla(154, 57%, 42%, 1)'
     -
@@ -3181,7 +3181,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Collapse Indicator Color
+        title: 文件夹配色 4：折叠指示器颜色
         default-light: 'hsla(153, 65%, 29%, 0.5)'
         default-dark: 'hsla(154, 57%, 42%, 0.5)'
     -
@@ -3189,7 +3189,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Background Color
+        title: 文件夹配色 4：背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.12)'
         default-dark: 'hsla(74, 69%, 44%, 0.12)'
     -
@@ -3197,7 +3197,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Background Color when Hovered
+        title: 文件夹配色 4：悬停背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.084)'
         default-dark: 'hsla(74, 69%, 44%, 0.084)'
     -
@@ -3205,7 +3205,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 4 Indentation Guide Color
+        title: 文件夹配色 4：缩进参考线颜色
         default-light: 'hsla(153, 65%, 29%, 0.25)'
         default-dark: 'hsla(154, 57%, 42%, 0.25)'
 	-
@@ -3213,13 +3213,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 5
+		title: 文件夹配色 5
     -
         id: bookmark-folder-5-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Text Color
+        title: 文件夹配色 5：文字颜色
         default-light: 'hsla(200, 64%, 37%, 1)'
         default-dark: 'hsla(194, 59%, 56%, 1)'
     -
@@ -3227,7 +3227,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Collapse Indicator Color
+        title: 文件夹配色 5：折叠指示器颜色
         default-light: 'hsla(200, 64%, 37%, 0.5)'
         default-dark: 'hsla(194, 59%, 56%, 0.5)'
     -
@@ -3235,7 +3235,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Background Color
+        title: 文件夹配色 5：背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.12)'
         default-dark: 'hsla(186, 64%, 46%, 0.12)'
     -
@@ -3243,7 +3243,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Background Color when Hovered
+        title: 文件夹配色 5：悬停背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.084)'
         default-dark: 'hsla(186, 64%, 46%, 0.084)'
     -
@@ -3251,7 +3251,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 5 Indentation Guide Color
+        title: 文件夹配色 5：缩进参考线颜色
         default-light: 'hsla(200, 64%, 37%, 0.25)'
         default-dark: 'hsla(194, 59%, 56%, 0.25)'
 	-
@@ -3259,13 +3259,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 6
+		title: 文件夹配色 6
     -
         id: bookmark-folder-6-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Text Color
+        title: 文件夹配色 6：文字颜色
         default-light: 'hsla(275, 37%, 43%, 1)'
         default-dark: 'hsla(242, 52%, 69%, 1)'
     -
@@ -3273,7 +3273,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Collapse Indicator Color
+        title: 文件夹配色 6：折叠指示器颜色
         default-light: 'hsla(275, 37%, 43%, 0.5)'
         default-dark: 'hsla(242, 52%, 69%, 0.5)'
     -
@@ -3281,7 +3281,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Background Color
+        title: 文件夹配色 6：背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.12)'
         default-dark: 'hsla(236, 100%, 72%, 0.12)'
     -
@@ -3289,7 +3289,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Background Color when Hovered
+        title: 文件夹配色 6：悬停背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.084)'
         default-dark: 'hsla(236, 100%, 72%, 0.084)'
     -
@@ -3297,7 +3297,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 6 Indentation Guide Color
+        title: 文件夹配色 6：缩进参考线颜色
         default-light: 'hsla(275, 37%, 43%, 0.25)'
         default-dark: 'hsla(242, 52%, 69%, 0.25)'
 	-
@@ -3305,13 +3305,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 7
+		title: 文件夹配色 7
     -
         id: bookmark-folder-7-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Text Color
+        title: 文件夹配色 7：文字颜色
         default-light: 'hsla(4, 56%, 48%, 1)'
         default-dark: 'hsla(4, 88%, 61%, 1)'
     -
@@ -3319,7 +3319,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Collapse Indicator Color
+        title: 文件夹配色 7：折叠指示器颜色
         default-light: 'hsla(4, 56%, 48%, 0.5)'
         default-dark: 'hsla(4, 88%, 61%, 0.5)'
     -
@@ -3327,7 +3327,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Background Color
+        title: 文件夹配色 7：背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.12)'
         default-dark: 'hsla(350, 84%, 63%, 0.12)'
     -
@@ -3335,7 +3335,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Background Color when Hovered
+        title: 文件夹配色 7：悬停背景颜色
         default-light: 'hsla(350, 84%, 63%, 0.084)'
         default-dark: 'hsla(350, 84%, 63%, 0.084)'
     -
@@ -3343,7 +3343,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 7 Indentation Guide Color
+        title: 文件夹配色 7：缩进参考线颜色
         default-light: 'hsla(4, 56%, 48%, 0.25)'
         default-dark: 'hsla(4, 88%, 61%, 0.25)'
 	-
@@ -3351,13 +3351,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 8
+		title: 文件夹配色 8
     -
         id: bookmark-folder-8-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Text Color
+        title: 文件夹配色 8：文字颜色
         default-light: 'hsla(18, 69%, 50%, 1)'
         default-dark: 'hsla(24, 84%, 50%, 1)'
     -
@@ -3365,7 +3365,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Collapse Indicator Color
+        title: 文件夹配色 8：折叠指示器颜色
         default-light: 'hsla(18, 69%, 50%, 0.5)'
         default-dark: 'hsla(24, 84%, 50%, 0.5)'
     -
@@ -3373,7 +3373,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Background Color
+        title: 文件夹配色 8：背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.12)'
         default-dark: 'hsla(27, 100%, 50%, 0.12)'
     -
@@ -3381,7 +3381,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Background Color when Hovered
+        title: 文件夹配色 8：悬停背景颜色
         default-light: 'hsla(27, 100%, 50%, 0.084)'
         default-dark: 'hsla(27, 100%, 50%, 0.084)'
     -
@@ -3389,7 +3389,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 8 Indentation Guide Color
+        title: 文件夹配色 8：缩进参考线颜色
         default-light: 'hsla(18, 69%, 50%, 0.25)'
         default-dark: 'hsla(24, 84%, 50%, 0.25)'
 	-
@@ -3397,13 +3397,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 9
+		title: 文件夹配色 9
     -
         id: bookmark-folder-9-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Text Color
+        title: 文件夹配色 9：文字颜色
         default-light: 'hsla(40, 98%, 36%, 1)'
         default-dark: 'hsla(42, 79%, 51%, 1)'
     -
@@ -3411,7 +3411,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Collapse Indicator Color
+        title: 文件夹配色 9：折叠指示器颜色
         default-light: 'hsla(40, 98%, 36%, 0.5)'
         default-dark: 'hsla(42, 79%, 51%, 0.5)'
     -
@@ -3419,7 +3419,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Background Color
+        title: 文件夹配色 9：背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.12)'
         default-dark: 'hsla(44, 100%, 50%, 0.12)'
     -
@@ -3427,7 +3427,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Background Color when Hovered
+        title: 文件夹配色 9：悬停背景颜色
         default-light: 'hsla(44, 100%, 50%, 0.084)'
         default-dark: 'hsla(44, 100%, 50%, 0.084)'
     -
@@ -3435,7 +3435,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 9 Indentation Guide Color
+        title: 文件夹配色 9：缩进参考线颜色
         default-light: 'hsla(40, 98%, 36%, 0.25)'
         default-dark: 'hsla(42, 79%, 51%, 0.25)'
 	-
@@ -3443,13 +3443,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 10
+		title: 文件夹配色 10
     -
         id: bookmark-folder-10-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Text Color
+        title: 文件夹配色 10：文字颜色
         default-light: 'hsla(153, 65%, 29%, 1)'
         default-dark: 'hsla(154, 57%, 42%, 1)'
     -
@@ -3457,7 +3457,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Collapse Indicator Color
+        title: 文件夹配色 10：折叠指示器颜色
         default-light: 'hsla(153, 65%, 29%, 0.5)'
         default-dark: 'hsla(154, 57%, 42%, 0.5)'
     -
@@ -3465,7 +3465,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Background Color
+        title: 文件夹配色 10：背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.12)'
         default-dark: 'hsla(74, 69%, 44%, 0.12)'
     -
@@ -3473,7 +3473,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Background Color when Hovered
+        title: 文件夹配色 10：悬停背景颜色
         default-light: 'hsla(74, 69%, 44%, 0.084)'
         default-dark: 'hsla(74, 69%, 44%, 0.084)'
     -
@@ -3481,7 +3481,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 10 Indentation Guide Color
+        title: 文件夹配色 10：缩进参考线颜色
         default-light: 'hsla(153, 65%, 29%, 0.25)'
         default-dark: 'hsla(154, 57%, 42%, 0.25)'
 	-
@@ -3489,13 +3489,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 11
+		title: 文件夹配色 11
     -
         id: bookmark-folder-11-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Text Color
+        title: 文件夹配色 11：文字颜色
         default-light: 'hsla(200, 64%, 37%, 1)'
         default-dark: 'hsla(194, 59%, 56%, 1)'
     -
@@ -3503,7 +3503,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Collapse Indicator Color
+        title: 文件夹配色 11：折叠指示器颜色
         default-light: 'hsla(200, 64%, 37%, 0.5)'
         default-dark: 'hsla(194, 59%, 56%, 0.5)'
     -
@@ -3511,7 +3511,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Background Color
+        title: 文件夹配色 11：背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.12)'
         default-dark: 'hsla(186, 64%, 46%, 0.12)'
     -
@@ -3519,7 +3519,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Background Color when Hovered
+        title: 文件夹配色 11：悬停背景颜色
         default-light: 'hsla(186, 64%, 46%, 0.084)'
         default-dark: 'hsla(186, 64%, 46%, 0.084)'
     -
@@ -3527,7 +3527,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 11 Indentation Guide Color
+        title: 文件夹配色 11：缩进参考线颜色
         default-light: 'hsla(200, 64%, 37%, 0.25)'
         default-dark: 'hsla(194, 59%, 56%, 0.25)'
 	-
@@ -3535,13 +3535,13 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
-		title: Folder 12
+		title: 文件夹配色 12
     -
         id: bookmark-folder-12-color
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Text Color
+        title: 文件夹配色 12：文字颜色
         default-light: 'hsla(275, 37%, 43%, 1)'
         default-dark: 'hsla(242, 52%, 69%, 1)'
     -
@@ -3549,7 +3549,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Collapse Indicator Color
+        title: 文件夹配色 12：折叠指示器颜色
         default-light: 'hsla(275, 37%, 43%, 0.5)'
         default-dark: 'hsla(242, 52%, 69%, 0.5)'
     -
@@ -3557,7 +3557,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Background Color
+        title: 文件夹配色 12：背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.12)'
         default-dark: 'hsla(236, 100%, 72%, 0.12)'
     -
@@ -3565,7 +3565,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Background Color when Hovered
+        title: 文件夹配色 12：悬停背景颜色
         default-light: 'hsla(236, 100%, 72%, 0.084)'
         default-dark: 'hsla(236, 100%, 72%, 0.084)'
     -
@@ -3573,7 +3573,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Folder 12 Indentation Guide Color
+        title: 文件夹配色 12：缩进参考线颜色
         default-light: 'hsla(275, 37%, 43%, 0.25)'
         default-dark: 'hsla(242, 52%, 69%, 0.25)'
 	-
@@ -3581,14 +3581,14 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: Graph
+		title: 关系图谱
     -
         id: graph-node
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Resolved Note Node Color
-        description: Color of existing notes
+        title: 已有笔记节点颜色
+        description: 已创建笔记的节点颜色。
         default-light: 'hsla(202, 66%, 48%, 1)'
         default-dark: 'hsla(197, 48%, 49%, 1)'
     -
@@ -3596,22 +3596,22 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Unresolved Note Node Color
-        description: Color of notes that don't exist (unresolved backlinks)
+        title: 未创建笔记节点颜色
+        description: 尚未创建笔记的节点颜色（指向不存在笔记的链接）。
         default-light: 'hsla(43, 83%, 57%, 1)'
         default-dark: 'hsla(42, 79%, 51%, 1)'
     -
         id: graph-node-unresolved-opacity
         type: variable-number
-        title: Unresolved Note Node Opacity
-        description: Opacity of nodes that don't exist (unresolved backlinks). Use a number that is less than or equal to 1, but more than or equal to 0.
+        title: 未创建笔记节点不透明度
+        description: 尚未创建笔记的节点不透明度（指向不存在笔记的链接），取值范围为 0 到 1。
         default: 1
     -
         id: graph-node-tag
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Tag Node Color
+        title: 标签节点颜色
         default-light: 'hsla(4, 72%, 55%, 1)'
         default-dark: 'hsla(4, 88%, 61%, 1)'
     -
@@ -3619,7 +3619,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Attachment Node Color
+        title: 附件节点颜色
         default-light: 'hsla(148, 30%, 65%, 1)'
         default-dark: 'hsla(155, 78%, 29%, 1)'
     -
@@ -3627,7 +3627,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Active File Node Color
+        title: 当前文件节点颜色
         default-light: 'hsla(31, 45%, 24%, 1)'
         default-dark: 'hsla(34, 39%, 74%, 1)'
     -
@@ -3635,7 +3635,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Hovered Node Color
+        title: 悬停节点颜色
         default-light: 'hsla(31, 23%, 50%, 1)'
         default-dark: 'hsla(34, 31%, 68%, 1)'
     -
@@ -3643,7 +3643,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Hovered Node Line Color
+        title: 悬停节点连线颜色
         default-light: 'hsla(34, 37%, 70%, 1)'
         default-dark: 'hsla(33, 27%, 30%, 1)'
     -
@@ -3651,7 +3651,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Text Color
+        title: 文字颜色
         default-light: 'hsla(34, 29%, 60%, 1)'
         default-dark: 'hsla(28, 22%, 18%, 1)'
     -
@@ -3659,7 +3659,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Line Color
+        title: 连线颜色
         default-light: 'hsla(37, 38%, 83%, 1)'
         default-dark: 'hsla(37, 38%, 83%, 1)'
     -
@@ -3667,7 +3667,7 @@ settings:
         type: variable-themed-color
         format: hsl
         opacity: true
-        title: Arrow Color
+        title: 箭头颜色
         default-light: 'hsla(31, 23%, 50%, 1)'
         default-dark: 'hsla(34, 24%, 40%, 1)'
 	-
@@ -3675,34 +3675,34 @@ settings:
 		type: heading
 		level: 1
 		collapsed: true
-		title: Advanced
+		title: 高级设置
     -
         id: readme-content
         type: info-text
         markdown: true
-        description: 🚧 Coming soon!
+        description: 🚧 敬请期待！
     -
 		id: readme-support
 		type: heading
 		level: 1
 		collapsed: true
-		title: Support Primary's Development
+		title: 支持 Primary 的开发
     -
         id: readme-content
         type: info-text
         markdown: true
-        title: 💗 Make a Donation on Ko-fi
-        description: Support development by subscribing monthly or making a one-time donation at [Primary's Ko-fi Page](https://ko-fi.com/ceciliamay).
+        title: 💗 在 Ko-fi 上捐赠
+        description: 在 [Primary 的 Ko-fi 页面](https://ko-fi.com/ceciliamay)进行每月订阅或一次性捐赠，支持主题开发。
     -
         id: readme-content
         type: info-text
         markdown: true
-        title: ⭐ Star the Theme on Github
-        description: Visit [Primary's Github Page](https://git.new/primary/obsidian) and consider starring the theme to show your appreciation!
+        title: ⭐ 在 GitHub 上为主题点星
+        description: 访问 [Primary 的 GitHub 页面](https://git.new/primary/obsidian)，为主题点星以表达支持！
     -
         id: readme-content
         type: info-text
         markdown: true
-        title: 🐛 Submit an Issue or Feature Request!
-        description: Visit [Primary's Github Issue Page](https://git.new/primary/obsidian) to submit an issue or feature request. <br> No Github account? Send me a message through [Twitter](https://x.com/ceciliamay_) or directly via [Email](mailto:contact.ceciliamay@gmail.com)
+        title: 🐛 提交问题或功能建议
+        description: 访问 [Primary 的 GitHub 问题页面](https://git.new/primary/obsidian)，提交问题或功能建议。<br> 没有 GitHub 账号？可通过 [Twitter](https://x.com/ceciliamay_) 或[电子邮件](mailto:contact.ceciliamay@gmail.com)联系作者。
 */
