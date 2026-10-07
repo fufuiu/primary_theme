@@ -1,3 +1,13 @@
+# 个人 Obsidian 主题
+
+本仓库基于 Primary 2.10.0 独立维护，以中文阅读、柔和配色和直观布局为主要设计方向。本地 `main` 是开发主线。
+
+当前安装需要 `theme.css`、`manifest.json`，并启用 `snippets/Primary-OnePage-preview.css`；个性化样式在该片段中维护。开发约定、验证方式和历史存档见 [AGENTS.md](AGENTS.md)。
+
+保留 Primary 原作者署名与 MIT 许可证。`origin` 指向官方上游，仅用于参考与更新；本地开发成果不向该远程推送。以下为保留的上游说明。
+
+---
+
 ![Primary for Obsidian Overview](https://github.com/primary-theme/obsidian/blob/main/assets/obsidian-overview-header.png)
 <h1 align="center">Primary for <a href="https://obsidian.md">Obsidian</a></h1>
 <p align="center">
