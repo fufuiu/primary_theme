@@ -97,6 +97,7 @@ module.exports = function(grunt) {
                         'src/css/readme.css',
                         'src/css/fonts/*.css',
                         'src/css/main.min.css',
+                        'src/css/personal.css',
                         'src/css/style-settings.css'
                     ]
                 }
@@ -107,6 +108,7 @@ module.exports = function(grunt) {
                         'src/css/readme.css',
                         'src/css/fonts/*.css',
                         'src/css/main.min.css',
+                        'src/css/personal.css',
                         'src/css/style-settings.css'
                     ]
                 }

@@ -12,8 +12,7 @@ const output = execFileSync('obsidian', ['vault=Personal OSV2', 'eval', `code=(a
         .map(s => [...s.cssRules].map(r => r.cssText).join(String.fromCharCode(10))).join(String.fromCharCode(10));
     const markup = document.querySelector('.workspace-leaf-content[data-type="git-view"] .nav-header')?.outerHTML;
     if (!markup || !component) throw new Error('Git toolbar has not been loaded');
-    const css = fs.readFileSync(root+'/theme.css', 'utf8') + component +
-        fs.readFileSync(root+'/snippets/Primary-OnePage-preview.css', 'utf8');
+    const css = component + fs.readFileSync(root+'/theme.css', 'utf8');
     const results = [];
     for (const width of [250,338,420]) {
         const frame = document.createElement('iframe');

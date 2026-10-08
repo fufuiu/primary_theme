@@ -13,6 +13,7 @@ const output = execFileSync('obsidian', ['vault=Personal OSV2', 'eval', `code=((
     host.className = 'workspace';
     host.setAttribute('aria-hidden', 'true');
     host.style.cssText = 'position:fixed;left:-9999px;top:0;width:400px;height:400px;pointer-events:none';
+    host.style.setProperty('--primary-personal-theme', '1');
     const side = host.createDiv('mod-sidedock mod-right-split');
     const row = side.createDiv('workspace-tab-header-container-inner');
     row.style.cssText = 'display:flex;width:196px;flex:none;overflow-x:auto;gap:4px';
@@ -66,6 +67,12 @@ const output = execFileSync('obsidian', ['vault=Personal OSV2', 'eval', `code=((
         row.scrollLeft = 36;
         results.editor = select(2);
         fixture.getRoot = () => app.workspace.rightSplit;
+        host.style.setProperty('--primary-personal-theme', '0');
+        row.scrollLeft = 36;
+        results.otherTheme = select(2);
+        host.style.setProperty('--primary-personal-theme', '1');
+        row.scrollLeft = 36;
+        results.themeReenabled = select(2);
         callbacks.forEach(callback => callback());
         results.unloadRestored = prototype.updateTabDisplay === original;
         row.scrollLeft = 36;
@@ -95,7 +102,9 @@ assert(Math.abs(result.resize-34) <= 1, 'Resize should only clamp a position bey
 assert(Math.abs(result.hiddenRight-88) <= 1, 'Hidden last tab should move only to its nearest visible edge');
 assert.equal(result.hiddenLeft, 0, 'Hidden first tab should move only to its nearest visible edge');
 assert.equal(result.refresh, 0, 'Refresh/focus must not pull a manually scrolled strip back to the active tab');
+assert.equal(result.otherTheme, result.nativeJump, 'Fix changes sidebar behavior under another theme');
+assert.equal(result.themeReenabled, 36, 'Fix does not resume when the personal theme is selected again');
 assert(result.unloadRestored && result.laterWrapperPreserved, 'Unloading should preserve other plugins');
 assert.equal(result.disabled, result.nativeJump, 'Unloading did not restore native behavior');
 assert.equal(result.disabledThroughWrapper, result.nativeJump, 'Disabled fix remains active inside another wrapper');
-console.log('通过：原生跳动复现、可见标签位置保持、不可见标签最小定位、刷新/缩放、正文标签及卸载恢复。');
+console.log('通过：原生跳动复现、可见标签位置保持、不可见标签最小定位、刷新/缩放、主题切换、正文标签及卸载恢复。');

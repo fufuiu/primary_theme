@@ -13,6 +13,9 @@ module.exports = class SidebarScrollFix extends Plugin {
             if (!enabled || this.isStacked || !row || !this.getRoot()?.containerEl?.classList.contains('mod-sidedock')) {
                 return original.apply(this, args);
             }
+            if (row.ownerDocument.defaultView.getComputedStyle(row).getPropertyValue('--primary-personal-theme').trim() !== '1') {
+                return original.apply(this, args);
+            }
 
             const position = row.scrollLeft;
             const previous = row.querySelector('.is-active');

@@ -1,4 +1,4 @@
-// Run with Personal OSV2 open, both sidebars expanded, Claudian in compact mode, and Primary-OnePage-preview enabled.
+// Run with Personal OSV2 open, both sidebars expanded, Claudian in compact mode, and the personal Primary theme selected.
 const assert = require('node:assert/strict');
 const { execFileSync } = require('node:child_process');
 
@@ -267,7 +267,7 @@ try {
         const base = [...document.styleSheets].filter(s => s.href?.includes('app.css'))
             .map(s => [...s.cssRules].map(r => r.cssText).join(String.fromCharCode(10))).join(String.fromCharCode(10));
         const markup = document.querySelector('[data-type="file-explorer"] .nav-header').outerHTML;
-        const css = fs.readFileSync(root + '/theme.css', 'utf8') + fs.readFileSync(root + '/snippets/Primary-OnePage-preview.css', 'utf8');
+        const css = fs.readFileSync(root + '/theme.css', 'utf8');
         const frame = document.createElement('iframe');
         frame.style.cssText = 'position:fixed;left:-9999px;width:338px;height:200px';
         document.body.appendChild(frame);

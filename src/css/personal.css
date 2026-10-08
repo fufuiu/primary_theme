@@ -1,4 +1,8 @@
-/* OnePage-inspired light palette and quiet sidebars. Toggle as a CSS snippet. */
+/* Personal theme styles; included in both distributable CSS files. */
+body {
+    --primary-personal-theme: 1;
+}
+
 body.theme-light:not(.is-mobile) {
     --color-l-gray-10: #f5f1e9;
     --color-l-gray-20: #f5f1e9;
