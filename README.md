@@ -4,7 +4,7 @@
 
 当前安装需要 `theme.css`、`manifest.json`，并启用 `snippets/Primary-OnePage-preview.css`；个性化样式在该片段中维护。开发约定、验证方式和历史存档见 [AGENTS.md](AGENTS.md)。
 
-保留 Primary 原作者署名与 MIT 许可证。`origin` 指向官方上游，仅用于参考与更新；本地开发成果不向该远程推送。以下为保留的上游说明。
+后续基于本地 `main` 自主开发，存档使用 Git 提交和固定标签，不再同步上游。保留 Primary 原作者署名与 MIT 许可证；`origin` 仅作为历史来源记录，不向该远程推送。以下为保留的原项目说明。
 
 ---
 
