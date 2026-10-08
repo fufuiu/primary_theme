@@ -298,7 +298,7 @@ body.theme-light:not(.is-mobile) .workspace-drawer-vault-actions > .clickable-ic
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover, :focus-within, :has(.has-active-menu)) .nav-buttons-container :not(.nav-action-button):has(> .nav-action-button) {
         gap: 4px;
         padding: 0;
-        border: 0;
+        border: 0 solid transparent;
         background: transparent;
         box-shadow: none;
     }
