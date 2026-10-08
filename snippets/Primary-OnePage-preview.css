@@ -113,6 +113,11 @@ body.theme-light:not(.is-mobile) .workspace-split.mod-root {
     background: var(--background-secondary-alt);
 }
 
+/* Window controls overlay the workspace, which supplies their surface color. */
+body.theme-light:not(.is-mobile) .titlebar .titlebar-button-container.mod-right {
+    background-color: transparent;
+}
+
 body.theme-light:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) {
     margin: 8px;
     height: calc(100% - 16px);
