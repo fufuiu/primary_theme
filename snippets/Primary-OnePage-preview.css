@@ -340,6 +340,28 @@ body.theme-light:not(.is-mobile) .workspace-split
     box-shadow: none;
 }
 
+/* Adding metadata is a secondary action beside the document. */
+body.theme-light:not(.is-mobile) .metadata-container .metadata-add-button {
+    color: var(--color-l-gray-100);
+    background: transparent;
+    box-shadow: none;
+    padding: var(--button-metadata-padding);
+}
+
+body.theme-light:not(.is-mobile) .metadata-container .metadata-add-button .text-button-icon {
+    color: inherit;
+}
+
+body.theme-light:not(.is-mobile) .metadata-container .metadata-add-button:is(:hover, :active, :focus-visible) {
+    color: var(--text-normal);
+    background: var(--background-modifier-hover);
+}
+
+body.theme-light:not(.is-mobile) .metadata-container .metadata-add-button:focus-visible {
+    outline: 2px solid var(--background-modifier-border-focus);
+    outline-offset: 2px;
+}
+
 /* Reading rhythm and content surfaces stay inside the document views. */
 body.theme-light:not(.is-mobile) :is(.markdown-preview-view, .markdown-source-view) {
     --file-line-width: 700px;
