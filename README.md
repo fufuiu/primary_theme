@@ -4,6 +4,8 @@
 
 当前安装需要 `theme.css`、`manifest.json`，并启用 `snippets/Primary-OnePage-preview.css`；个性化样式在该片段中维护。开发约定、验证方式和历史存档见 [AGENTS.md](AGENTS.md)。
 
+侧栏切换时保留手动滚动位置的修复位于 `plugins/primary-sidebar-scroll/`。将该目录复制到笔记库的 `.obsidian/plugins/`，在社区插件中启用「Primary 侧栏滚动修复」；停用即可恢复原生行为。此功能需要插件，单独安装 CSS 不包含该修复。
+
 后续基于本地 `main` 自主开发，存档使用 Git 提交和固定标签，不再同步上游。保留 Primary 原作者署名与 MIT 许可证；`origin` 仅作为历史来源记录，不向该远程推送。以下为保留的原项目说明。
 
 ---

@@ -62,6 +62,8 @@ const measure = () => evaluate(`(() => {
                         gap:parseFloat(s.gap), separators:[...g.querySelectorAll('.nav-action-button')].map(b => parseFloat(getComputedStyle(b).borderLeftWidth))};
                 })}; }),
         standardControl:controls('.mod-root .view-actions .clickable-icon')[0],
+        pageControls:controls('.mod-root .view-header :is(.view-actions, .view-header-nav-buttons) > .clickable-icon'),
+        vaultControls:controls('.workspace-drawer-vault-actions > .clickable-icon'),
         ribbonControls:controls('.workspace-ribbon .clickable-icon'),
         fileControls:controls('[data-type="file-explorer"] .nav-action-button'),
         chatControls:controls('.claudian-view-input-nav-row .claudian-input-nav-btn') });
@@ -86,7 +88,7 @@ try {
         assert(expanded.height > panel.height, `Panel does not expand: ${panel.type}`);
         const centers = expanded.buttons.map(c => c.y + c.height / 2);
         assert(Math.max(...centers) - Math.min(...centers) <= 1, `Panel actions wrap onto another row: ${panel.type}`);
-        assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
+        assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 26 && c.icon?.width >= 12 && c.clickable),
             `Panel controls squeezed or covered: ${panel.type}`);
         const standard = view.standardControl;
         assert(expanded.buttons.every(c => c.height <= standard.height+1) && expanded.groups.every(g => g.height <= standard.height+2),
@@ -112,7 +114,10 @@ try {
         assert(control.icon?.width >= 12 && control.icon?.height >= 12,
             `Claudian icon squeezed or hidden: ${control.label}`);
     }
-    for (const group of [view.ribbonControls, view.fileControls, ...(view.chatVisible ? [view.chatControls] : [])]) {
+    for (const control of [...view.ribbonControls, ...view.fileControls, ...view.pageControls, ...view.vaultControls]) {
+        assert(control.height >= 26, 'Shell button has insufficient vertical space: '+control.label);
+    }
+    for (const group of [view.ribbonControls, view.fileControls, view.pageControls, view.vaultControls, ...(view.chatVisible ? [view.chatControls] : [])]) {
         assert(group.length > 0, 'Controls missing');
         for (const [index, control] of group.entries()) {
             assert(control.width >= 20 && control.height >= 20 && control.clickable,
@@ -130,8 +135,12 @@ try {
         const measureHeader = header => {
             const row = header.querySelector('.workspace-tab-header-container-inner'),
                 menu = header.querySelector('.workspace-tab-header-tab-list .clickable-icon');
-            return {row:rect(row), overflow:row.scrollWidth-row.clientWidth, menu:rect(menu),
-                tabs:[...row.querySelectorAll('.workspace-tab-header')].map(e => ({...rect(e), hit:hit(e), icon:rect(e.querySelector('svg'))}))};
+            return {row:rect(row), gap:parseFloat(getComputedStyle(row).gap), overflow:row.scrollWidth-row.clientWidth, menu:rect(menu),
+                tabs:[...row.querySelectorAll('.workspace-tab-header')].map(e => ({...rect(e), hit:hit(e), icon:rect(e.querySelector('svg')),
+                    active:e.classList.contains('is-active'), background:getComputedStyle(e).backgroundColor,
+                    marker:rect(e.querySelector('.workspace-tab-header-inner-icon')),
+                    markerBackground:getComputedStyle(e.querySelector('.workspace-tab-header-inner-icon')).backgroundColor,
+                    color:getComputedStyle(e.querySelector('svg')).color}))};
         };
         const actual = [...document.querySelectorAll('.mod-sidedock > .workspace-tabs.mod-top > .workspace-tab-header-container')]
             .filter(e => e.offsetWidth > 0).map(measureHeader);
@@ -139,7 +148,8 @@ try {
         const side = document.querySelector('.mod-right-split'), original = side.querySelector('.workspace-tab-header-container');
         const host = document.createElement('div'), copy = side.cloneNode(false), tabs = original.parentElement.cloneNode(false), header = original.cloneNode(true);
         host.className = 'workspace';
-        host.style.cssText = 'position:fixed;left:-9999px;top:0;width:600px;height:300px;pointer-events:none';
+        host.style.cssText = 'position:fixed;left:-9999px;top:0;width:600px;height:300px;pointer-events:none;display:block';
+        copy.style.flex = 'none';
         host.setAttribute('aria-hidden', 'true');
         tabs.append(header); copy.append(tabs); host.append(copy); document.body.append(host);
         try {
@@ -147,7 +157,7 @@ try {
                 copy.style.width = width+'px';
                 const row = header.querySelector('.workspace-tab-header-container-inner');
                 row.scrollLeft = 0;
-                const result = {width, ...measureHeader(header)};
+                const result = {width, actualWidth:rect(copy).width, ...measureHeader(header)};
                 row.scrollLeft = row.scrollWidth;
                 result.lastAtEnd = rect(row.lastElementChild).right <= rect(row).right+1;
                 return result;
@@ -158,19 +168,31 @@ try {
     assert(sidebarTabs.actual.length >= 2, 'Sidebar tab strips missing');
     for (const panel of sidebarTabs.actual) {
         assert.equal(panel.menu.width, 0, 'Sidebar tabs have a duplicate dropdown entry');
+        const active = panel.tabs.filter(tab => tab.active);
+        assert.equal(active.length, 1, 'Sidebar has no single selected tab');
+        assert.equal(active[0].background, 'rgba(0, 0, 0, 0)', 'Selected surface fills the entire tab');
+        assert(active[0].marker.width === 24 && active[0].marker.height === 24, 'Selected surface is oversized');
+        assert(['x','y'].every((axis, index) => Math.abs(active[0].marker[axis]+12-active[0].icon[axis]-active[0].icon[index ? 'height' : 'width']/2) <= 0.1),
+            'Selected icon is not centered in its surface');
+        assert.notEqual(active[0].markerBackground, 'rgba(0, 0, 0, 0)', 'Selected sidebar tab has no visible surface');
+        assert(panel.tabs.filter(tab => !tab.active).every(tab => tab.markerBackground !== active[0].markerBackground && tab.color !== active[0].color),
+            'Selected sidebar tab is indistinguishable from other tabs');
         assert(panel.tabs.every(tab => Math.abs(tab.y+tab.height/2-sidebarTabs.windowButton.y-sidebarTabs.windowButton.height/2) <= 1),
             'Sidebar tabs and window controls are vertically misaligned');
         if (panel.overflow <= 1) assert(panel.tabs.every(tab => tab.hit), 'Fitting sidebar tabs are obscured');
     }
     const iconSize = sidebarTabs.actual.at(-1).tabs[0].icon.width;
     for (const panel of sidebarTabs.layouts) {
+        assert(Math.abs(panel.actualWidth-panel.width) <= 0.1, 'Sidebar fixture does not have its requested width');
         assert.equal(panel.menu.width, 0, 'Sidebar tabs have a duplicate dropdown entry at width '+panel.width);
-        assert(panel.tabs.every(tab => tab.width >= 22 && tab.height >= 24 && tab.icon.width === iconSize && tab.icon.height === iconSize),
+        assert.equal(panel.gap, 4, 'Right sidebar tabs have insufficient spacing');
+        assert(panel.tabs.every(tab => tab.width === 32 && tab.height === 32 && tab.icon.width === iconSize && tab.icon.height === iconSize),
             'Sidebar icons shrink or targets collapse at width '+panel.width);
         const widths = panel.tabs.map(tab => tab.width);
         assert(Math.max(...widths)-Math.min(...widths) <= 0.1, 'Sidebar tabs have uneven widths');
         assert(panel.lastAtEnd, 'Last sidebar tab cannot be reached by scrolling');
-        if (panel.tabs.length <= 7 && panel.width >= 338) assert(panel.overflow <= 1, 'Seven tabs should fit at width '+panel.width);
+        if (panel.tabs.length*32 + (panel.tabs.length-1)*panel.gap <= panel.row.width)
+            assert(panel.overflow <= 1, 'Fitting tabs overflow at width '+panel.width);
     }
     const colors = evaluate(`(() => {
         const sample = document.createElement('div');

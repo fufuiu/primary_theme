@@ -1,0 +1,9 @@
+{
+  "id": "primary-sidebar-scroll",
+  "name": "Primary 侧栏滚动修复",
+  "version": "0.1.0",
+  "minAppVersion": "1.14.0",
+  "description": "切换可见的侧栏标签时保留手动滚动位置。",
+  "author": "Personal Primary",
+  "isDesktopOnly": true
+}

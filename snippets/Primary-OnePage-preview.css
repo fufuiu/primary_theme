@@ -164,7 +164,7 @@ body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header-container-i
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header {
     flex: 0 1 32px;
     width: 32px;
-    min-width: 22px;
+    min-width: 26px;
     height: 32px;
     transform: none;
 }
@@ -173,6 +173,15 @@ body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header-inner {
     flex: 1;
     min-width: 0;
     padding: 0;
+}
+
+body.theme-light:not(.is-mobile) .mod-right-split .workspace-tab-header-container-inner {
+    gap: 4px;
+}
+
+body.theme-light:not(.is-mobile) .mod-right-split .workspace-tab-header {
+    flex: 0 0 32px;
+    min-width: 32px;
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header,
@@ -184,10 +193,18 @@ body.theme-light:not(.is-mobile) .workspace-ribbon .clickable-icon {
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header.is-active {
     background: transparent;
     border-color: transparent;
+    border-radius: var(--clickable-icon-radius);
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-    color: var(--text-normal);
+    color: var(--icon-color-active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: var(--background-modifier-hover);
 }
 
 body.theme-light:not(.is-mobile) .mod-root .workspace-tabs .workspace-tab-header.is-active {
@@ -208,6 +225,12 @@ body.theme-light:not(.is-mobile) .nav-files-container {
 body.theme-light:not(.is-mobile) .nav-buttons-container {
     padding-left: 0;
     gap: 4px;
+}
+
+body.theme-light:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+body.theme-light:not(.is-mobile) .view-header :is(.view-actions, .view-header-nav-buttons) > .clickable-icon,
+body.theme-light:not(.is-mobile) .workspace-drawer-vault-actions > .clickable-icon {
+    padding-block: 6px;
 }
 
 /* Compact panel actions share the theme's regular icon and button scale. */
@@ -325,6 +348,10 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
 
     body.theme-light:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
         --icon-color: #857d70;
+    }
+
+    body.theme-light:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button {
+        padding-block: 6px;
     }
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button:hover:not([aria-disabled="true"]) {
