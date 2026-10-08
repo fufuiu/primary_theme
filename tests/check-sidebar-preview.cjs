@@ -40,6 +40,7 @@ const measure = () => evaluate(`(() => {
         const svg = e.querySelector('svg')?.getBoundingClientRect();
         return { label:e.getAttribute('aria-label')||'Sidebar toggle', index,
             icon:svg ? {width:svg.width, height:svg.height} : null,
+            radius:parseFloat(getComputedStyle(e).borderTopLeftRadius),
             x:r.x, y:r.y, width:r.width, height:r.height, right:r.right, bottom:r.bottom,
             clickable:hit===e||e.contains(hit) };
     }).filter(r => r.width > 0 && r.height > 0);
@@ -60,6 +61,7 @@ const measure = () => evaluate(`(() => {
                     return {border:parseFloat(s.borderTopWidth), radius:parseFloat(s.borderTopLeftRadius), height:g.getBoundingClientRect().height,
                         gap:parseFloat(s.gap), separators:[...g.querySelectorAll('.nav-action-button')].map(b => parseFloat(getComputedStyle(b).borderLeftWidth))};
                 })}; }),
+        standardControl:controls('.mod-root .view-actions .clickable-icon')[0],
         ribbonControls:controls('.workspace-ribbon .clickable-icon'),
         fileControls:controls('[data-type="file-explorer"] .nav-action-button'),
         chatControls:controls('.claudian-view-input-nav-row .claudian-input-nav-btn') });
@@ -86,12 +88,14 @@ try {
         assert(Math.max(...centers) - Math.min(...centers) <= 1, `Panel actions wrap onto another row: ${panel.type}`);
         assert(expanded.buttons.every(c => c.width >= 20 && c.height >= 20 && c.icon?.width >= 12 && c.clickable),
             `Panel controls squeezed or covered: ${panel.type}`);
-        assert(expanded.buttons.every(c => c.height <= 36) && expanded.groups.every(g => g.height <= 36),
-            `Wrapped panel stretches button heights: ${panel.type}`);
-        assert.equal(expanded.background, 'rgba(0, 0, 0, 0)', 'OnePage Linux toolbar should have a transparent surface');
-        assert.equal(expanded.gap, '2px', 'OnePage Linux toolbar spacing differs');
-        assert(expanded.buttons.every(c => c.icon?.width === 18), 'OnePage Linux icon size differs');
-        assert(expanded.groups.every(g => g.radius === 9), `Expanded group differs from OnePage Linux: ${panel.type}`);
+        const standard = view.standardControl;
+        assert(expanded.buttons.every(c => c.height <= standard.height+1) && expanded.groups.every(g => g.height <= standard.height+2),
+            `Panel buttons are oversized relative to page controls: ${panel.type}`);
+        assert.equal(expanded.background, 'rgba(0, 0, 0, 0)', 'Panel toolbar should have a transparent surface');
+        assert.equal(expanded.gap, '2px', 'Panel toolbar spacing differs');
+        assert(expanded.buttons.every(c => c.icon?.width === standard.icon.width && c.icon?.height === standard.icon.height),
+            `Panel icons differ from regular page icons: ${panel.type}`);
+        assert(expanded.groups.every(g => g.radius === standard.radius), `Panel group corners differ from page controls: ${panel.type}`);
     }
     hoverPanel('file-explorer');
     settlePanelActions();
@@ -119,6 +123,54 @@ try {
                 assert(overlapX <= 1 || overlapY <= 1, `Overlapping controls: ${control.label}, ${other.label}`);
             }
         }
+    }
+    const sidebarTabs = evaluate(`(() => {
+        const rect = e => { const r = e.getBoundingClientRect(); return {x:r.x, y:r.y, width:r.width, height:r.height, right:r.right}; };
+        const hit = e => { const r = rect(e), target = document.elementFromPoint(r.x+r.width/2, r.y+r.height/2); return target===e||e.contains(target); };
+        const measureHeader = header => {
+            const row = header.querySelector('.workspace-tab-header-container-inner'),
+                menu = header.querySelector('.workspace-tab-header-tab-list .clickable-icon');
+            return {row:rect(row), overflow:row.scrollWidth-row.clientWidth, menu:rect(menu),
+                tabs:[...row.querySelectorAll('.workspace-tab-header')].map(e => ({...rect(e), hit:hit(e), icon:rect(e.querySelector('svg'))}))};
+        };
+        const actual = [...document.querySelectorAll('.mod-sidedock > .workspace-tabs.mod-top > .workspace-tab-header-container')]
+            .filter(e => e.offsetWidth > 0).map(measureHeader);
+        const windowButton = rect(document.querySelector('.titlebar-button.mod-minimize'));
+        const side = document.querySelector('.mod-right-split'), original = side.querySelector('.workspace-tab-header-container');
+        const host = document.createElement('div'), copy = side.cloneNode(false), tabs = original.parentElement.cloneNode(false), header = original.cloneNode(true);
+        host.className = 'workspace';
+        host.style.cssText = 'position:fixed;left:-9999px;top:0;width:600px;height:300px;pointer-events:none';
+        host.setAttribute('aria-hidden', 'true');
+        tabs.append(header); copy.append(tabs); host.append(copy); document.body.append(host);
+        try {
+            const layouts = [250,300,338,420,500].map(width => {
+                copy.style.width = width+'px';
+                const row = header.querySelector('.workspace-tab-header-container-inner');
+                row.scrollLeft = 0;
+                const result = {width, ...measureHeader(header)};
+                row.scrollLeft = row.scrollWidth;
+                result.lastAtEnd = rect(row.lastElementChild).right <= rect(row).right+1;
+                return result;
+            });
+            return JSON.stringify({actual, windowButton, layouts});
+        } finally { host.remove(); }
+    })()`);
+    assert(sidebarTabs.actual.length >= 2, 'Sidebar tab strips missing');
+    for (const panel of sidebarTabs.actual) {
+        assert.equal(panel.menu.width, 0, 'Sidebar tabs have a duplicate dropdown entry');
+        assert(panel.tabs.every(tab => Math.abs(tab.y+tab.height/2-sidebarTabs.windowButton.y-sidebarTabs.windowButton.height/2) <= 1),
+            'Sidebar tabs and window controls are vertically misaligned');
+        if (panel.overflow <= 1) assert(panel.tabs.every(tab => tab.hit), 'Fitting sidebar tabs are obscured');
+    }
+    const iconSize = sidebarTabs.actual.at(-1).tabs[0].icon.width;
+    for (const panel of sidebarTabs.layouts) {
+        assert.equal(panel.menu.width, 0, 'Sidebar tabs have a duplicate dropdown entry at width '+panel.width);
+        assert(panel.tabs.every(tab => tab.width >= 22 && tab.height >= 24 && tab.icon.width === iconSize && tab.icon.height === iconSize),
+            'Sidebar icons shrink or targets collapse at width '+panel.width);
+        const widths = panel.tabs.map(tab => tab.width);
+        assert(Math.max(...widths)-Math.min(...widths) <= 0.1, 'Sidebar tabs have uneven widths');
+        assert(panel.lastAtEnd, 'Last sidebar tab cannot be reached by scrolling');
+        if (panel.tabs.length <= 7 && panel.width >= 338) assert(panel.overflow <= 1, 'Seven tabs should fit at width '+panel.width);
     }
     const colors = evaluate(`(() => {
         const sample = document.createElement('div');
@@ -193,56 +245,55 @@ try {
         const base = [...document.styleSheets].filter(s => s.href?.includes('app.css'))
             .map(s => [...s.cssRules].map(r => r.cssText).join(String.fromCharCode(10))).join(String.fromCharCode(10));
         const markup = document.querySelector('[data-type="file-explorer"] .nav-header').outerHTML;
-        const styles = [fs.readFileSync(root + '/../OnePage/theme.css', 'utf8'),
-            fs.readFileSync(root + '/theme.css', 'utf8') + fs.readFileSync(root + '/snippets/Primary-OnePage-preview.css', 'utf8')];
-        const results = [];
-        for (const css of styles) {
-            const frame = document.createElement('iframe');
-            frame.style.cssText = 'position:fixed;left:-9999px;width:338px;height:200px';
-            document.body.appendChild(frame);
-            try {
-                frame.srcdoc = '<style>' + base + '</style><style>' + css.replaceAll(':hover', '.motion-hover') + '</style>' +
-                    '<style>html,body{contain:none!important;height:auto;display:block}.workspace{height:auto;display:block}' +
-                    '.workspace-split.mod-sidedock{width:338px!important;height:auto!important;margin:0!important;padding:0!important}' +
-                    '.workspace-leaf-content{height:auto}</style><body class="mod-linux obsidian-app theme-light">' +
-                    '<div class="workspace"><div class="workspace-split mod-sidedock"><div class="workspace-leaf-content">' +
-                    '<div class="view-content">' + markup + '</div></div></div></div>';
-                await new Promise(resolve => frame.onload = resolve);
-                const header = frame.contentDocument.querySelector('.nav-header'),
-                    row = header.querySelector('.nav-buttons-container'), button = header.querySelector('.nav-action-button'),
-                    svg = button.querySelector('svg'), style = e => frame.contentWindow.getComputedStyle(e);
-                const snapshot = () => ({row:row.getBoundingClientRect().width, button:button.getBoundingClientRect().width,
-                    icon:svg.getBoundingClientRect().width, height:header.getBoundingClientRect().height});
+        const css = fs.readFileSync(root + '/theme.css', 'utf8') + fs.readFileSync(root + '/snippets/Primary-OnePage-preview.css', 'utf8');
+        const frame = document.createElement('iframe');
+        frame.style.cssText = 'position:fixed;left:-9999px;width:338px;height:200px';
+        document.body.appendChild(frame);
+        try {
+            frame.srcdoc = '<style>' + base + '</style><style>' + css.replaceAll(':hover', '.motion-hover') + '</style>' +
+                '<style>html,body{contain:none!important;height:auto;display:block}.workspace{height:auto;display:block}' +
+                '.workspace-split.mod-sidedock{width:338px!important;height:auto!important;margin:0!important;padding:0!important}' +
+                '.workspace-leaf-content{height:auto}</style><body class="mod-linux obsidian-app theme-light">' +
+                '<div class="workspace"><div class="workspace-split mod-sidedock"><div class="workspace-leaf-content">' +
+                '<div class="view-content">' + markup + '</div></div></div></div>';
+            await new Promise(resolve => frame.onload = resolve);
+            const header = frame.contentDocument.querySelector('.nav-header'),
+                row = header.querySelector('.nav-buttons-container'), button = header.querySelector('.nav-action-button'),
+                svg = button.querySelector('svg'), style = e => frame.contentWindow.getComputedStyle(e);
+            const snapshot = () => ({row:row.getBoundingClientRect().width, button:button.getBoundingClientRect().width,
+                icon:svg.getBoundingClientRect().width, height:header.getBoundingClientRect().height});
+            style(svg).width;
+            header.getAnimations({subtree:true}).forEach(a => a.finish());
+            const rest = snapshot(), traces = [];
+            for (const opening of [true, false]) {
+                header.classList.toggle('motion-hover', opening);
                 style(svg).width;
-                header.getAnimations({subtree:true}).forEach(a => a.finish());
-                const traces = [];
-                for (const opening of [true, false]) {
-                    header.classList.toggle('motion-hover', opening);
-                    style(svg).width;
-                    const animations = header.getAnimations({subtree:true});
-                    animations.forEach(a => a.pause());
-                    const samples = [];
-                    for (const time of [0,16,32,64,120,200,320]) {
-                        animations.forEach(a => a.currentTime = time);
-                        samples.push(snapshot());
-                    }
-                    animations.forEach(a => a.finish());
-                    style(svg).width;
-                    traces.push(samples);
+                const animations = header.getAnimations({subtree:true});
+                animations.forEach(a => a.pause());
+                const samples = [];
+                for (const time of [0,16,32,64,120,200,320]) {
+                    animations.forEach(a => a.currentTime = time);
+                    samples.push(snapshot());
                 }
-                results.push(traces);
-            } finally { frame.remove(); }
-        }
-        return JSON.stringify(results);
+                animations.forEach(a => a.finish());
+                style(svg).width;
+                traces.push(samples);
+            }
+            return JSON.stringify({rest, traces});
+        } finally { frame.remove(); }
     })()`);
-    const [reference, current] = motion;
-    for (const direction of [0,1]) for (const [index, sample] of current[direction].entries()) {
-        for (const key of ['row','button','icon','height']) {
-            assert(Math.abs(sample[key] - reference[direction][index][key]) <= 0.15,
-                `Animation diverges from OnePage: direction=${direction}, frame=${index}, ${key}`);
+    const [opening, closing] = motion.traces;
+    for (const key of ['row','button','icon','height']) {
+        assert(Math.abs(opening[0][key]-motion.rest[key]) <= 0.15, 'Toolbar jumps at the start of opening: '+key);
+        assert(Math.abs(closing.at(-1)[key]-motion.rest[key]) <= 0.15, 'Toolbar does not return to its collapsed size: '+key);
+        for (let i = 1; i < opening.length; i++) {
+            assert(opening[i][key] >= opening[i-1][key]-0.15, 'Toolbar reverses while opening: '+key);
+            assert(closing[i][key] <= closing[i-1][key]+0.15, 'Toolbar reverses while closing: '+key);
         }
     }
-    console.log('通过：动画中间帧与 OnePage 一致；侧栏操作栏单行、图标可点击，文档配色、内容层次和字体参数检查通过。');
+    assert(opening.at(-1).icon === view.standardControl.icon.width, 'Expanded animation ends at the wrong icon size');
+    assert([...opening, ...closing].every(s => s.icon <= s.button+0.15), 'Animated icon overflows its button');
+    console.log('通过：侧栏标签对齐与尺寸适配、无重复下拉入口、操作栏尺寸与点击区域、动画收放、文档配色与字体参数检查通过。');
 } finally {
     for (const type of forcedHeaders) hoverPanel(type, false);
     move(...restingPoint);

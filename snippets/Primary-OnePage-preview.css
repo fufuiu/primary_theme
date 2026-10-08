@@ -119,8 +119,8 @@ body.theme-light:not(.is-mobile) .titlebar .titlebar-button-container.mod-right 
 }
 
 body.theme-light:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) {
-    margin: 8px;
-    height: calc(100% - 16px);
+    margin: 0 8px 8px;
+    height: calc(100% - 8px);
     border: none;
     border-radius: 10px;
     background: var(--background-secondary);
@@ -148,9 +148,31 @@ body.theme-light:not(.is-mobile) .mod-sidedock > .workspace-leaf-resize-handle {
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header-container {
+    align-items: center;
     background: transparent;
     border: none;
     box-shadow: none;
+}
+
+body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header-container-inner {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    gap: 2px;
+}
+
+body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header {
+    flex: 0 1 32px;
+    width: 32px;
+    min-width: 22px;
+    height: 32px;
+    transform: none;
+}
+
+body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header-inner {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
 }
 
 body.theme-light:not(.is-mobile) .mod-sidedock .workspace-tab-header,
@@ -188,12 +210,11 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
     gap: 4px;
 }
 
-/* OnePage compact panel actions: shared native headers in either sidebar. */
+/* Compact panel actions share the theme's regular icon and button scale. */
 @media (hover: hover) and (pointer: fine) {
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
         --panel-actions-duration: 320ms;
         --panel-actions-easing: cubic-bezier(0.32, 0.72, 0, 1);
-        --clickable-icon-radius: 9px;
         --anim-duration-fast: 160ms;
         --background-modifier-hover: color-mix(in oklch, rgb(var(--mono-rgb-100)) 6.7%, transparent);
         display: flex;
@@ -220,11 +241,11 @@ body.theme-light:not(.is-mobile) .nav-buttons-container {
 
     body:not(.is-mobile) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-action-button {
         position: relative;
-        --icon-size: 18px;
+        --icon-size: var(--icon-s);
         --icon-stroke: 2px;
         min-width: 20px;
         height: auto;
-        padding: 8px;
+        padding: 4px 6px;
         border-radius: var(--clickable-icon-radius);
         transition: padding var(--panel-actions-duration) var(--panel-actions-easing),
             min-width var(--panel-actions-duration) var(--panel-actions-easing),
