@@ -6,7 +6,7 @@
 
 可选的侧栏滚动修复位于 `plugins/primary-sidebar-scroll/`。它改变切换标签时的程序行为，无法由主题 CSS 提供；将该目录复制到笔记库的 `.obsidian/plugins/` 并启用「Primary 侧栏滚动修复」即可使用。插件只在本主题的样式生效时介入，切换到默认或其他主题即使用原生行为。发布时可另附此插件；所有外观和动画均不依赖它。旧版用户需关闭并移除 `Primary-OnePage-preview` 片段，避免重复样式。
 
-后续基于本地 `main` 自主开发，存档使用 Git 提交和固定标签，不再同步上游。保留 Primary 原作者署名与 MIT 许可证；`origin` 仅作为历史来源记录，不向该远程推送。以下为保留的原项目说明。
+后续基于本地 `main` 自主开发，存档使用 Git 提交和固定标签，不再同步上游。保留 Primary 原作者署名与原有 [LICENSE](LICENSE)（GNU GPL v3）；`origin` 指向个人公开 Fork `fufuiu/primary_theme`，`upstream` 仅作为历史来源记录，不向官方远程推送。以下为保留的原项目说明。
 
 ---
 

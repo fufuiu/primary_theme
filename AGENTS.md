@@ -11,13 +11,15 @@
   `main` 已快进合并 `zh-cn-personal` 至 `08aac33`；后续开发以本地 `main`
   为主线，按任务需要建立工作分支。此前保护 `main` 为官方基线的规则已替换。
 - `zh-cn-personal` 保留为合并前的开发历史分支。
-- 用户决定后续自主开发，不再维护上游同步。`main` 取消对 `origin/main`
-  的跟踪；日常工作不执行上游 fetch/pull/merge，不追随官方版本或默认值。
+- 用户决定后续自主开发，不再维护上游同步。`main` 跟踪个人 Fork 的 `origin/main`；
+  日常工作不执行上游 fetch/pull/merge，不追随官方版本或默认值。
   以后按本项目需求和实际使用效果决定设计与实现。
-- 官方远程 `origin`：`https://github.com/primary-theme/obsidian.git`。
-  仅保留为历史来源记录；这不是用户的 fork，不向官方仓库推送本地修改。
+- 2026-10-29 已接入公开 Fork：`origin` → `https://github.com/fufuiu/primary_theme.git`，
+  本地与 GitHub 默认分支均为 `main`，个人修改只向此远程推送。
+- 官方远程 `upstream`：`https://github.com/primary-theme/obsidian.git`。
+  仅保留为历史来源记录，不向官方仓库推送本地修改。
 - 当前基于 Primary `2.10.0`，官方基线提交为
-  `789c99e357d8c0049058ef358a906ea9b350fb09`，可通过提交或 `origin/main`
+  `789c99e357d8c0049058ef358a906ea9b350fb09`，可通过提交或 `upstream/main`
   查阅上游源码；本地 `main` 承载独立主题的开发成果。
 - 后续存档默认使用 Git 提交与固定注释标签，不自动重复生成 ZIP；历史 ZIP
   与旧标签保留。新标签使用 `personal-checkpoint-NN`，不移动已有存档标签。
